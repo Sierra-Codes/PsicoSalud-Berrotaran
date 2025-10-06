@@ -65,117 +65,236 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="relative overflow-hidden">
-    <div class="blob w-64 h-64 bg-brand-mint rounded-full -top-10 -left-10"></div>
-    <div class="blob w-72 h-72 bg-brand-yellow rounded-full -bottom-16 -right-10"></div>
+  <!-- HERO pantalla completa con olas en degradé -->
+<section class="relative isolate overflow-hidden min-h-[90vh] md:min-h-screen flex items-center">
+  <!-- FONDO con olas -->
+  <svg aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="none"
+     class="absolute inset-0 -z-10 w-full h-full">
+  <defs>
+    <!-- Degradés de marca -->
+    <linearGradient id="g-mint-turq" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#A8E6CF"/>
+      <stop offset="100%" stop-color="#63D1C1"/>
+    </linearGradient>
+    <linearGradient id="g-left-turq" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#63D1C1"/>
+      <stop offset="100%" stop-color="#63D1C1" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
 
-    <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
-          Acompañamiento integral para <span class="text-brand-turquoise">niños, adolescentes</span> y adultos
-        </h1>
-        <p class="mt-4 text-lg text-slate-600">
-          Psicología, Psicopedagogía, Fonoaudiología, Psicomotricidad y Nutrición. Un mismo equipo, un mismo objetivo: tu bienestar.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <!-- WhatsApp directo (reemplazar con nro real) -->
-          <a href="https://wa.me/5490000000000?text=Hola%20PsicoSalud%2C%20me%20gustar%C3%ADa%20pedir%20un%20turno"
-             class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-brand-turquoise text-white font-semibold shadow-soft hover:opacity-90">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A10 10 0 0 0 3.3 17.6L2 22l4.5-1.2a10 10 0 0 0 14-17.3zM8.8 7.5c.2-.5.3-.5.6-.5h.5c.2 0 .4 0 .5.4s.6 1.6.6 1.7.1.3 0 .5a1.2 1.2 0 0 1-.2.3c-.1.1-.3.3-.4.4s-.3.3-.1.6a6.8 6.8 0 0 0 3.2 2.9c.2.1.4 0 .6-.2a8.4 8.4 0 0 0 .6-.8c.2-.3.4-.3.7-.2s1.7.8 2 .9.5.2.6.3.1.5 0 .9a2.8 2.8 0 0 1-1 1.3 2.3 2.3 0 0 1-1.6.2 9.3 9.3 0 0 1-4.2-1.8A10.7 10.7 0 0 1 8 12a5 5 0 0 1-1.3-2.6 2.2 2.2 0 0 1 .1-1 2.5 2.5 0 0 1 1-1z"/></svg>
-            Pedir turno por WhatsApp
-          </a>
-          <a href="#autoevaluacion" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-900 text-white font-semibold shadow-soft hover:bg-slate-800">
-            Realizá tu autoevaluación
-          </a>
-        </div>
-        <div class="mt-3 text-sm text-slate-500">Obras sociales, particulares y CUD.</div>
-      </div>
+  <!-- Ola superior (mint→turquesa) -->
+  <path d="M0,140 C210,60 420,220 720,170 C1020,120 1230,180 1440,140 L1440,0 L0,0 Z"
+        fill="url(#g-mint-turq)" opacity=".85"></path>
 
-      <!-- Tarjeta rápida de áreas -->
-      <div class="grid grid-cols-2 gap-4">
-        <div class="p-5 rounded-2xl bg-brand-mint/40 shadow-soft">
-          <h3 class="font-bold">Psicología</h3>
-          <p class="text-sm text-slate-600 mt-1">Terapia cognitivo-conductual. Niños, adolescentes y adultos.</p>
-        </div>
-        <div class="p-5 rounded-2xl bg-brand-yellow/60 shadow-soft">
-          <h3 class="font-bold">Psicopedagogía</h3>
-          <p class="text-sm text-slate-600 mt-1">Evaluación y acompañamiento de procesos de aprendizaje.</p>
-        </div>
-        <div class="p-5 rounded-2xl bg-brand-turquoise/20 shadow-soft">
-          <h3 class="font-bold">Fonoaudiología</h3>
-          <p class="text-sm text-slate-600 mt-1">Comunicación, lenguaje y motricidad orofacial.</p>
-        </div>
-        <div class="p-5 rounded-2xl bg-pink-100 shadow-soft">
-          <h3 class="font-bold">Psicomotricidad</h3>
-          <p class="text-sm text-slate-600 mt-1">Estimulación temprana y cognitiva.</p>
-        </div>
-        <div class="p-5 rounded-2xl bg-emerald-100 shadow-soft col-span-2">
-          <h3 class="font-bold">Nutrición</h3>
-          <p class="text-sm text-slate-600 mt-1">Abordaje empático e integral. Educación alimentaria.</p>
-        </div>
+  <!-- Ola lateral izquierda (turquesa→transparente) -->
+  <path d="M0,900 L0,0 L360,0
+           C420,80 420,200 360,280
+           C300,360 300,540 360,620
+           C420,700 420,820 360,900 Z"
+        fill="url(#g-left-turq)" opacity=".75"></path>
+
+
+</svg>
+  
+
+  <!-- CONTENIDO -->
+  <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center w-full">
+    <!-- Texto -->
+    <div class="relative z-10">
+      <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
+        Acompañamiento integral para niños, adolescentes y adultos
+      </h1>
+      <p class="mt-4 text-lg text-slate-700 max-w-xl">
+        Psicología, Psicopedagogía, Fonoaudiología, Psicomotricidad y Nutrición.
+        Un mismo equipo, un mismo objetivo: tu bienestar.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="https://wa.me/5490000000000?text=Hola%20PsicoSalud%2C%20me%20gustar%C3%ADa%20pedir%20un%20turno"
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-brand-turquoise text-white font-semibold shadow-soft hover:opacity-90">
+          Pedir turno por WhatsApp
+        </a>
+        <a href="#autoevaluacion"
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-900 text-white font-semibold shadow-soft hover:bg-slate-800">
+          Realizá tu autoevaluación
+        </a>
       </div>
+      <div class="mt-3 text-sm text-slate-600">Obras sociales, particulares y CUD.</div>
     </div>
-  </section>
+
+   
+  </div>
+</section>
+
+
+<!-- Nosotros -->
+<section id="nosotros" class="py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+    <!-- Texto -->
+    <div>
+      <span class="inline-flex items-center gap-2 text-sm font-semibold text-brand-dark bg-brand-mint/30 px-3 py-1 rounded-full">
+        Sobre PsicoSalud
+      </span>
+      <h2 class="mt-3 text-2xl md:text-3xl font-extrabold">
+        Un equipo interdisciplinario, un mismo objetivo: tu bienestar
+      </h2>
+      <p class="mt-3 text-slate-600">
+        Trabajamos de manera coordinada en Psicología, Psicopedagogía, Fonoaudiología, Psicomotricidad y Nutrición
+        para acompañar a <strong>niños, adolescentes y adultos</strong> con un enfoque humano y basado en evidencia.
+      </p>
+
+      <ul class="mt-4 space-y-2 text-slate-700">
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 mt-0.5" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#63D1C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Abordaje empático, respetuoso y centrado en la familia.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 mt-0.5" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#63D1C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Trabajo en red con escuelas y otros profesionales cuando es necesario.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 mt-0.5" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#63D1C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Derivaciones responsables y orientación a madres y padres.</span>
+        </li>
+      </ul>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="https://wa.me/5490000000000?text=Hola%20PsicoSalud%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n"
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-brand-turquoise text-white font-semibold shadow-soft hover:opacity-90">
+          Escribinos por WhatsApp
+        </a>
+        <a href="https://www.instagram.com/psicosaludberrotaran" target="_blank"
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200">
+          Seguinos en Instagram
+        </a>
+      </div>
+      <p class="mt-2 text-xs text-slate-500">Atención en Rogelio Martínez 360, Berrotarán, Córdoba.</p>
+    </div>
+
+    <!-- Imagen / tarjeta visual -->
+    <div class="relative">
+      <div class="bg-white rounded-2xl p-2 shadow-soft border-t-4 border-brand-turquoise/30">
+        <img src="/assets/equipo.jpg"
+             onerror="this.src='https://images.unsplash.com/photo-1554774853-b415df9eeb92?q=80&w=1600&auto=format&fit=crop'"
+             alt="Equipo PsicoSalud"
+             class="rounded-xl object-cover w-full h-[320px] md:h-[360px]">
+      </div>
+      <img src="/assets/logo-psicosalud.png" alt="PsicoSalud" class="absolute -bottom-4 -right-4 w-16 md:w-20 drop-shadow">
+    </div>
+  </div>
+</section>
 
   <!-- Áreas -->
-  <section id="areas" class="py-16 md:py-20 bg-slate-50">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-extrabold">Áreas de trabajo</h2>
-      <p class="mt-2 text-slate-600">Intervenciones basadas en evidencia, coordinadas por un equipo humano y cercano.</p>
+<section id="areas" class="py-16 md:py-20 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-extrabold">Áreas de trabajo</h2>
+    <p class="mt-2 text-slate-600">Intervenciones basadas en evidencia, coordinadas por un equipo humano y cercano.</p>
 
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <article class="bg-white rounded-2xl p-6 shadow-soft">
+    <div class="mt-8 grid md:grid-cols-3 gap-6">
+      <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-turquoise/30">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 22 22" aria-hidden="true">
+            <circle cx="7" cy="7" r="5" fill="#63D1C1"/>
+            <circle cx="15" cy="7" r="5" fill="#FFF59D"/>
+            <circle cx="7" cy="15" r="5" fill="#F48FB1"/>
+            <circle cx="15" cy="15" r="5" fill="#A8E6CF"/>
+          </svg>
           <h3 class="font-bold text-lg">Psicología</h3>
-          <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
-            <li>Terapia cognitivo-conductual</li>
-            <li>Terapia breve focalizada</li>
-            <li>Orientación para familias</li>
-          </ul>
-        </article>
-        <article class="bg-white rounded-2xl p-6 shadow-soft">
+        </div>
+        <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
+          <li>Terapia cognitivo-conductual</li>
+          <li>Terapia breve focalizada</li>
+          <li>Orientación para familias</li>
+        </ul>
+      </article>
+
+      <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-turquoise/30">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 22 22" aria-hidden="true">
+            <circle cx="7" cy="7" r="5" fill="#A8E6CF"/>
+            <circle cx="15" cy="7" r="5" fill="#63D1C1"/>
+            <circle cx="7" cy="15" r="5" fill="#FFF59D"/>
+            <circle cx="15" cy="15" r="5" fill="#F48FB1"/>
+          </svg>
           <h3 class="font-bold text-lg">Psicopedagogía</h3>
-          <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
-            <li>Evaluación neurocognitiva</li>
-            <li>Tratamientos para niños y adolescentes</li>
-            <li>Inclusión escolar</li>
-          </ul>
-        </article>
-        <article class="bg-white rounded-2xl p-6 shadow-soft">
+        </div>
+        <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
+          <li>Evaluación neurocognitiva</li>
+          <li>Tratamientos para niños y adolescentes</li>
+          <li>Inclusión escolar</li>
+        </ul>
+      </article>
+
+      <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-turquoise/30">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 22 22" aria-hidden="true">
+            <circle cx="7" cy="7" r="5" fill="#F48FB1"/>
+            <circle cx="15" cy="7" r="5" fill="#A8E6CF"/>
+            <circle cx="7" cy="15" r="5" fill="#63D1C1"/>
+            <circle cx="15" cy="15" r="5" fill="#FFF59D"/>
+          </svg>
           <h3 class="font-bold text-lg">Fonoaudiología</h3>
-          <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
-            <li>Lenguaje y comunicación</li>
-            <li>Motricidad orofacial</li>
-            <li>Atención con y sin CUD</li>
-          </ul>
-        </article>
-        <article class="bg-white rounded-2xl p-6 shadow-soft">
+        </div>
+        <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
+          <li>Lenguaje y comunicación</li>
+          <li>Motricidad orofacial</li>
+          <li>Atención con y sin CUD</li>
+        </ul>
+      </article>
+
+      <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-turquoise/30">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 22 22" aria-hidden="true">
+            <circle cx="7" cy="7" r="5" fill="#FFF59D"/>
+            <circle cx="15" cy="7" r="5" fill="#F48FB1"/>
+            <circle cx="7" cy="15" r="5" fill="#A8E6CF"/>
+            <circle cx="15" cy="15" r="5" fill="#63D1C1"/>
+          </svg>
           <h3 class="font-bold text-lg">Psicomotricidad</h3>
-          <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
-            <li>Intervención educativa y terapéutica</li>
-            <li>Estimulación temprana y cognitiva</li>
-            <li>Adultos mayores</li>
-          </ul>
-        </article>
-        <article class="bg-white rounded-2xl p-6 shadow-soft">
+        </div>
+        <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
+          <li>Intervención educativa y terapéutica</li>
+          <li>Estimulación temprana y cognitiva</li>
+          <li>Adultos mayores</li>
+        </ul>
+      </article>
+
+      <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-turquoise/30">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 22 22" aria-hidden="true">
+            <circle cx="7" cy="7" r="5" fill="#63D1C1"/>
+            <circle cx="15" cy="7" r="5" fill="#A8E6CF"/>
+            <circle cx="7" cy="15" r="5" fill="#FFF59D"/>
+            <circle cx="15" cy="15" r="5" fill="#F48FB1"/>
+          </svg>
           <h3 class="font-bold text-lg">Nutrición</h3>
-          <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
-            <li>Abordaje empático e integral</li>
-            <li>Educación alimentaria</li>
-            <li>Planes personalizados</li>
-          </ul>
-        </article>
-        <article class="bg-white rounded-2xl p-6 shadow-soft">
+        </div>
+        <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
+          <li>Abordaje empático e integral</li>
+          <li>Educación alimentaria</li>
+          <li>Planes personalizados</li>
+        </ul>
+      </article>
+
+      <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-turquoise/30">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 22 22" aria-hidden="true">
+            <circle cx="7" cy="7" r="5" fill="#F48FB1"/>
+            <circle cx="15" cy="7" r="5" fill="#63D1C1"/>
+            <circle cx="7" cy="15" r="5" fill="#A8E6CF"/>
+            <circle cx="15" cy="15" r="5" fill="#FFF59D"/>
+          </svg>
           <h3 class="font-bold text-lg">Acompañamiento familiar</h3>
-          <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
-            <li>Orientación a madres y padres</li>
-            <li>Trabajo con la escuela</li>
-            <li>Derivaciones responsables</li>
-          </ul>
-        </article>
-      </div>
+        </div>
+        <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
+          <li>Orientación a madres y padres</li>
+          <li>Trabajo con la escuela</li>
+          <li>Derivaciones responsables</li>
+        </ul>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Equipo -->
   <section id="equipo" class="py-16 md:py-20">
