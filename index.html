@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PsicoSalud Berrotarán — Acompañamiento integral</title>
+  <meta name="description" content="Equipo interdisciplinario en Berrotarán. Psicología, Psicopedagogía, Fonoaudiología, Psicomotricidad y Nutrición. Turnos por WhatsApp. Autoevaluación orientativa online." />
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              turquoise: '#63D1C1',  /* celeste/menta del feed */
+              mint: '#A8E6CF',
+              yellow: '#FFF59D',
+              coral: '#F48FB1',
+              dark: '#1f2937'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'Apple Color Emoji', 'Segoe UI Emoji']
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(0,0,0,.06)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%2363D1C1%22/><text x=%2250%22 y=%2258%22 text-anchor=%22middle%22 font-size=%2248%22 fill=%22white%22 font-family=%22Arial%22>Ψ</text></svg>">
+  <style>
+    /* decorativas suaves tipo “ondas” del feed */
+    .blob {
+      position:absolute; inset:auto; filter: blur(40px); opacity:.25; pointer-events:none;
+    }
+  </style>
+</head>
+<body class="font-sans text-slate-800 bg-white selection:bg-brand-turquoise/20 selection:text-brand-dark">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a class="flex items-center gap-3" href="#">
+        <span class="w-10 h-10 rounded-full bg-brand-turquoise grid place-content-center text-white font-bold">Ψ</span>
+        <div class="leading-tight">
+          <div class="font-bold text-lg">PsicoSalud Berrotarán</div>
+          <div class="text-xs text-slate-500">Equipo Interdisciplinario</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#areas" class="hover:text-brand-dark">Áreas</a>
+        <a href="#equipo" class="hover:text-brand-dark">Equipo</a>
+        <a href="#autoevaluacion" class="hover:text-brand-dark">Autoevaluación</a>
+        <a href="#contacto" class="hover:text-brand-dark">Contacto</a>
+        <a href="https://www.instagram.com/psicosaludberrotaran" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 6.8a1.2 1.2 0 1 1-1.2 1.2A1.2 1.2 0 0 1 18 6.8z"/></svg>
+          Instagram
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="blob w-64 h-64 bg-brand-mint rounded-full -top-10 -left-10"></div>
+    <div class="blob w-72 h-72 bg-brand-yellow rounded-full -bottom-16 -right-10"></div>
+
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
+          Acompañamiento integral para <span class="text-brand-turquoise">niños, adolescentes</span> y adultos
+        </h1>
+        <p class="mt-4 text-lg text-slate-600">
+          Psicología, Psicopedagogía, Fonoaudiología, Psicomotricidad y Nutrición. Un mismo equipo, un mismo objetivo: tu bienestar.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <!-- WhatsApp directo (reemplazar con nro real) -->
+          <a href="https://wa.me/5490000000000?text=Hola%20PsicoSalud%2C%20me%20gustar%C3%ADa%20pedir%20un%20turno"
+             class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-brand-turquoise text-white font-semibold shadow-soft hover:opacity-90">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A10 10 0 0 0 3.3 17.6L2 22l4.5-1.2a10 10 0 0 0 14-17.3zM8.8 7.5c.2-.5.3-.5.6-.5h.5c.2 0 .4 0 .5.4s.6 1.6.6 1.7.1.3 0 .5a1.2 1.2 0 0 1-.2.3c-.1.1-.3.3-.4.4s-.3.3-.1.6a6.8 6.8 0 0 0 3.2 2.9c.2.1.4 0 .6-.2a8.4 8.4 0 0 0 .6-.8c.2-.3.4-.3.7-.2s1.7.8 2 .9.5.2.6.3.1.5 0 .9a2.8 2.8 0 0 1-1 1.3 2.3 2.3 0 0 1-1.6.2 9.3 9.3 0 0 1-4.2-1.8A10.7 10.7 0 0 1 8 12a5 5 0 0 1-1.3-2.6 2.2 2.2 0 0 1 .1-1 2.5 2.5 0 0 1 1-1z"/></svg>
+            Pedir turno por WhatsApp
+          </a>
+          <a href="#autoevaluacion" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-900 text-white font-semibold shadow-soft hover:bg-slate-800">
+            Realizá tu autoevaluación
+          </a>
+        </div>
+        <div class="mt-3 text-sm text-slate-500">Obras sociales, particulares y CUD.</div>
+      </div>
+
+      <!-- Tarjeta rápida de áreas -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="p-5 rounded-2xl bg-brand-mint/40 shadow-soft">
+          <h3 class="font-bold">Psicología</h3>
+          <p class="text-sm text-slate-600 mt-1">Terapia cognitivo-conductual. Niños, adolescentes y adultos.</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-brand-yellow/60 shadow-soft">
+          <h3 class="font-bold">Psicopedagogía</h3>
+          <p class="text-sm text-slate-600 mt-1">Evaluación y acompañamiento de procesos de aprendizaje.</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-brand-turquoise/20 shadow-soft">
+          <h3 class="font-bold">Fonoaudiología</h3>
+          <p class="text-sm text-slate-600 mt-1">Comunicación, lenguaje y motricidad orofacial.</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-pink-100 shadow-soft">
+          <h3 class="font-bold">Psicomotricidad</h3>
+          <p class="text-sm text-slate-600 mt-1">Estimulación temprana y cognitiva.</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-emerald-100 shadow-soft col-span-2">
+          <h3 class="font-bold">Nutrición</h3>
+          <p class="text-sm text-slate-600 mt-1">Abordaje empático e integral. Educación alimentaria.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Áreas -->
+  <section id="areas" class="py-16 md:py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Áreas de trabajo</h2>
+      <p class="mt-2 text-slate-600">Intervenciones basadas en evidencia, coordinadas por un equipo humano y cercano.</p>
+
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <article class="bg-white rounded-2xl p-6 shadow-soft">
+          <h3 class="font-bold text-lg">Psicología</h3>
+          <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
+            <li>Terapia cognitivo-conductual</li>
+            <li>Terapia breve focalizada</li>
+            <li>Orientación para familias</li>
+          </ul>
+        </article>
+        <article class="bg-white rounded-2xl p-6 shadow-soft">
+          <h3 class="font-bold text-lg">Psicopedagogía</h3>
+          <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
+            <li>Evaluación neurocognitiva</li>
+            <li>Tratamientos para niños y adolescentes</li>
+            <li>Inclusión escolar</li>
+          </ul>
+        </article>
+        <article class="bg-white rounded-2xl p-6 shadow-soft">
+          <h3 class="font-bold text-lg">Fonoaudiología</h3>
+          <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
+            <li>Lenguaje y comunicación</li>
+            <li>Motricidad orofacial</li>
+            <li>Atención con y sin CUD</li>
+          </ul>
+        </article>
+        <article class="bg-white rounded-2xl p-6 shadow-soft">
+          <h3 class="font-bold text-lg">Psicomotricidad</h3>
+          <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
+            <li>Intervención educativa y terapéutica</li>
+            <li>Estimulación temprana y cognitiva</li>
+            <li>Adultos mayores</li>
+          </ul>
+        </article>
+        <article class="bg-white rounded-2xl p-6 shadow-soft">
+          <h3 class="font-bold text-lg">Nutrición</h3>
+          <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
+            <li>Abordaje empático e integral</li>
+            <li>Educación alimentaria</li>
+            <li>Planes personalizados</li>
+          </ul>
+        </article>
+        <article class="bg-white rounded-2xl p-6 shadow-soft">
+          <h3 class="font-bold text-lg">Acompañamiento familiar</h3>
+          <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
+            <li>Orientación a madres y padres</li>
+            <li>Trabajo con la escuela</li>
+            <li>Derivaciones responsables</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipo -->
+  <section id="equipo" class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Nuestro equipo</h2>
+      <p class="mt-2 text-slate-600">Profesionales comprometidos con un abordaje integral.</p>
+
+      <!-- Cards del equipo (pueden reemplazarse por fotos reales) -->
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Ejemplos basados en el feed -->
+        <div class="bg-white rounded-2xl p-6 shadow-soft">
+          <img alt="Lic. Alejandra Bergonzi" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=800&auto=format&fit=crop"
+               class="w-24 h-24 rounded-full object-cover border-4 border-white shadow -mt-12 mb-4 mx-auto">
+          <h3 class="text-center font-bold">Lic. Alejandra Bergonzi</h3>
+          <p class="text-center text-sm text-slate-600">Psicóloga — M.P. 11411</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-soft">
+          <img alt="Lic. Shirley Cabral" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop"
+               class="w-24 h-24 rounded-full object-cover border-4 border-white shadow -mt-12 mb-4 mx-auto">
+          <h3 class="text-center font-bold">Lic. Shirley Cabral</h3>
+          <p class="text-center text-sm text-slate-600">Psicopedagoga — M.P. 223876</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-soft">
+          <img alt="Lic. Andrea Cabral" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop"
+               class="w-24 h-24 rounded-full object-cover border-4 border-white shadow -mt-12 mb-4 mx-auto">
+          <h3 class="text-center font-bold">Lic. Andrea Cabral</h3>
+          <p class="text-center text-sm text-slate-600">Nutrición — M.P. 4940</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-soft">
+          <img alt="Virginia Rossetti" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=800&auto=format&fit=crop"
+               class="w-24 h-24 rounded-full object-cover border-4 border-white shadow -mt-12 mb-4 mx-auto">
+          <h3 class="text-center font-bold">Virginia Rossetti</h3>
+          <p class="text-center text-sm text-slate-600">Prof. de Educación Especial</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-soft">
+          <img alt="Ana Luz Luna" src="https://images.unsplash.com/photo-1541534401786-2077eed87a72?q=80&w=800&auto=format&fit=crop"
+               class="w-24 h-24 rounded-full object-cover border-4 border-white shadow -mt-12 mb-4 mx-auto">
+          <h3 class="text-center font-bold">Ana Luz Luna</h3>
+          <p class="text-center text-sm text-slate-600">Fonoaudióloga — M.P. 9500</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-soft">
+          <img alt="Fernanda Tissera" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop"
+               class="w-24 h-24 rounded-full object-cover border-4 border-white shadow -mt-12 mb-4 mx-auto">
+          <h3 class="text-center font-bold">Fernanda Tissera</h3>
+          <p class="text-center text-sm text-slate-600">Psicomotricista — M.P. 11774</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Autoevaluación -->
+  <section id="autoevaluacion" class="py-16 md:py-20 bg-gradient-to-b from-brand-mint/30 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Autoevaluación orientativa</h2>
+      <p class="mt-3 text-slate-700">
+        Responé 8 preguntas rápidas y recibí una orientación inicial sobre qué tipo de acompañamiento podría ser útil.
+        No reemplaza una evaluación profesional.
+      </p>
+      <a href="/autoevaluacion.html" class="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-slate-900 text-white font-semibold shadow-soft hover:bg-slate-800">
+        Empezar autoevaluación
+      </a>
+      <p class="mt-2 text-xs text-slate-500">Luego vas a poder agendar un turno por WhatsApp.</p>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
+      <div class="bg-white rounded-2xl p-8 shadow-soft">
+        <h2 class="text-2xl font-extrabold">Ubicación y contacto</h2>
+        <p class="mt-2 text-slate-600">Rogelio Martínez 360, Berrotarán, Córdoba</p>
+        <div class="mt-5 space-y-3 text-sm">
+          <div class="flex items-center gap-2"><span class="font-semibold">Tel:</span> 358-4821525 / 351-7529630 / 3571-520689 (según área)</div>
+          <div class="flex items-center gap-2"><span class="font-semibold">Instagram:</span> <a class="text-brand-dark underline" href="https://www.instagram.com/psicosaludberrotaran" target="_blank">@psicosaludberrotaran</a></div>
+          <div class="flex items-center gap-2"><span class="font-semibold">WhatsApp:</span> <a class="text-brand-dark underline" href="https://wa.me/5490000000000" target="_blank">Enviar mensaje</a></div>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="https://wa.me/5490000000000?text=Hola%20PsicoSalud%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n"
+             class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-brand-turquoise text-white font-semibold shadow-soft hover:opacity-90">
+            WhatsApp
+          </a>
+          <a href="https://www.instagram.com/psicosaludberrotaran" target="_blank"
+             class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200">
+            Instagram
+          </a>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden shadow-soft h-80">
+        <!-- Mapa embebido (lugar aproximado; reemplazar por ubicación exacta si lo desean) -->
+        <iframe title="Mapa Berrotarán" class="w-full h-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Berrotar%C3%A1n%2C%20C%C3%B3rdoba&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-slate-500">© <span id="year"></span> PsicoSalud Berrotarán — Equipo Interdisciplinario</p>
+      <p class="text-sm text-slate-400">Desarrollado por <a href="https://sierracodes.com" target="_blank" class="underline">Sierra Codes</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
