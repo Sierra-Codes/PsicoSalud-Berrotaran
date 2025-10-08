@@ -3,409 +3,789 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PsicoSalud Berrotarán — Acompañamiento integral</title>
+<title>PsicoSalud Berrotarán: Acompañamiento integral</title>
+<link rel="icon" type="image/jpeg" href="/assets/logo-solo.jpg">
   <meta name="description" content="Equipo interdisciplinario en Berrotarán. Psicología, Psicopedagogía, Fonoaudiología, Psicomotricidad y Nutrición. Turnos por WhatsApp. Autoevaluación orientativa online." />
 
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              turquoise: '#63D1C1',  /* celeste/menta del feed */
-              mint: '#A8E6CF',
-              yellow: '#FFF59D',
-              coral: '#F48FB1',
-              dark: '#1f2937'
-            }
+  
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          psico: {
+            turquoise: '#5ECAC7',  
+            green: '#8BCB90',
+            blue: '#3F8AD4',
+            pink: '#F48FA8',
+            yellow: '#FFF176',
+            black: '#2B2B2B',
           },
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'Apple Color Emoji', 'Segoe UI Emoji']
-          },
-          boxShadow: {
-            soft: '0 10px 30px rgba(0,0,0,.06)'
-          }
-        }
-      }
-    }
-  </script>
+        },
+        backgroundImage: {
+          'psico-turq-green': 'linear-gradient(to right, #5ECAC7, #8BCB90)',
+          'psico-blue-turq':  'linear-gradient(to right, #3F8AD4, #5ECAC7)',
+        },
+        fontFamily: {
+          sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial'],
+        },
+        boxShadow: {
+          soft: '0 8px 28px rgba(0,0,0,0.06)',
+        },
+      },
+    },
+  }
+</script>
+
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%2363D1C1%22/><text x=%2250%22 y=%2258%22 text-anchor=%22middle%22 font-size=%2248%22 fill=%22white%22 font-family=%22Arial%22>Ψ</text></svg>">
   <style>
-    /* decorativas suaves tipo “ondas” del feed */
     .blob {
       position:absolute; inset:auto; filter: blur(40px); opacity:.25; pointer-events:none;
     }
   </style>
 </head>
 <body class="font-sans text-slate-800 bg-white selection:bg-brand-turquoise/20 selection:text-brand-dark">
-  <!-- Header -->
-  <header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-slate-100">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a class="flex items-center gap-3" href="#">
-        <span class="w-10 h-10 rounded-full bg-brand-turquoise grid place-content-center text-white font-bold">Ψ</span>
-        <div class="leading-tight">
-          <div class="font-bold text-lg">PsicoSalud Berrotarán</div>
-          <div class="text-xs text-slate-500">Equipo Interdisciplinario</div>
-        </div>
-      </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#areas" class="hover:text-brand-dark">Áreas</a>
-        <a href="#equipo" class="hover:text-brand-dark">Equipo</a>
-        <a href="#autoevaluacion" class="hover:text-brand-dark">Autoevaluación</a>
-        <a href="#contacto" class="hover:text-brand-dark">Contacto</a>
-        <a href="https://www.instagram.com/psicosaludberrotaran" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 6.8a1.2 1.2 0 1 1-1.2 1.2A1.2 1.2 0 0 1 18 6.8z"/></svg>
-          Instagram
-        </a>
-      </nav>
-    </div>
-  </header>
 
-  <!-- HERO pantalla completa con olas en degradé -->
-<section class="relative isolate overflow-hidden min-h-[90vh] md:min-h-screen flex items-center">
-  <!-- FONDO con olas -->
-  <svg aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="none"
-     class="absolute inset-0 -z-10 w-full h-full">
-  <defs>
-    <!-- Degradés de marca -->
-    <linearGradient id="g-mint-turq" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#A8E6CF"/>
-      <stop offset="100%" stop-color="#63D1C1"/>
-    </linearGradient>
-    <linearGradient id="g-left-turq" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#63D1C1"/>
-      <stop offset="100%" stop-color="#63D1C1" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
+  <!-- NAVBAR  -->
+<nav class="sticky top-0 z-50 supports-[backdrop-filter]:bg-[#FFFEFB]/75 backdrop-blur-sm border-b border-[#7FD8BE]/60 shadow-sm">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+    <!-- Brand -->
+    <a href="/" class="flex items-center gap-2">
+      <img src="/assets/logo-solo.jpg" alt="PsicoSalud" class="w-8 h-8 rounded-full border border-[#5ECAC7] p-0.5 bg-white" />
+      <span class="sr-only">PsicoSalud</span>
+    </a>
 
-  <!-- Ola superior (mint→turquesa) -->
-  <path d="M0,140 C210,60 420,220 720,170 C1020,120 1230,180 1440,140 L1440,0 L0,0 Z"
-        fill="url(#g-mint-turq)" opacity=".85"></path>
+    <!-- Links -->
+    <ul class="flex items-center gap-6 text-[15px] font-medium">
+  <li>
+    <a href="#areas" aria-current="page"
+       class="relative px-1 py-2 text-[#2f2f2f] hover:text-[#3BAAA7] transition
+              after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0
+              after:bg-[#5ECAC7] after:transition-all hover:after:w-full
+              aria-[current=page]:text-[#3BAAA7]
+              aria-[current=page]:after:w-full">
+      Áreas
+    </a>
+  </li>
+  <li>
+    <a href="#sobre-nosotros"
+       class="relative px-1 py-2 text-[#2f2f2f] hover:text-[#3BAAA7] transition
+              after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0
+              after:bg-[#5ECAC7] after:transition-all hover:after:w-full
+              aria-[current=page]:text-[#3BAAA7]
+              aria-[current=page]:after:w-full">
+      Sobre Nosotros
+    </a>
+  </li>
+  <li>
+    <a href="#equipo"
+       class="relative px-1 py-2 text-[#2f2f2f] hover:text-[#3BAAA7] transition
+              after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0
+              after:bg-[#5ECAC7] after:transition-all hover:after:w-full
+              aria-[current=page]:text-[#3BAAA7]
+              aria-[current=page]:after:w-full">
+      Equipo
+    </a>
+  </li>
+  <li>
+    <a href="#autoevaluacion"
+       class="relative px-1 py-2 text-[#2f2f2f] hover:text-[#3BAAA7] transition
+              after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0
+              after:bg-[#5ECAC7] after:transition-all hover:after:w-full
+              aria-[current=page]:text-[#3BAAA7]
+              aria-[current=page]:after:w-full">
+      Autoevaluación
+    </a>
+  </li>
+  <li>
+    <a href="#equipo"
+       class="relative px-1 py-2 text-[#2f2f2f] hover:text-[#3BAAA7] transition
+              after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0
+              after:bg-[#5ECAC7] after:transition-all hover:after:w-full
+              aria-[current=page]:text-[#3BAAA7]
+              aria-[current=page]:after:w-full">
+      Contacto
+    </a>
+  </li>
+  <li>
+    <a href="https://instagram.com/psicosalud.berrotaran" target="_blank" rel="noopener"
+       class="rounded-full border border-[#5ECAC7]/40 px-3 py-1.5 text-[#2f2f2f] hover:text-[#184B47] hover:bg-[#A8E6CF]/30 transition">
+      Instagram
+    </a>
+  </li>
+</ul>
 
-  <!-- Ola lateral izquierda (turquesa→transparente) -->
-  <path d="M0,900 L0,0 L360,0
-           C420,80 420,200 360,280
-           C300,360 300,540 360,620
-           C420,700 420,820 360,900 Z"
-        fill="url(#g-left-turq)" opacity=".75"></path>
+  </div>
+</nav>
 
+   <!-- HERO -->
+<section class="relative isolate overflow-hidden bg-[#FFFEFB] pb-28 md:pb-32">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 text-center">
+<div class="mb-6 sm:mb-8">
+<div class="relative inline-block select-none"
+     style="
+       --logo-h:72px;           
+       --icon-w:74px;           
+       --tagline-top:46px;       
+       --tagline-h:22px;        
+       --fade:.30;             
+       --left-adjust:-32px;     
+       --right-adjust:0px;       
+     ">
+  <img src="/assets/logo-horizontal.jpg" alt="PsicoSalud · Equipo Interdisciplinario"
+       style="height:var(--logo-h); width:auto; display:block;" />
+  <span aria-hidden="true" style="
+        position:absolute;
+        left:calc(var(--icon-w) + var(--left-adjust));
+        right:var(--right-adjust);
+        top:var(--tagline-top);
+        height:var(--tagline-h);
+        background:
+          linear-gradient(90deg,
+            rgba(255,255,255,0) 0 6px,
+            rgba(255,255,255,var(--fade)) 18%,
+            rgba(255,255,255,var(--fade)) 82%,
+            rgba(255,255,255,0) calc(100% - 6px));
+        border-radius:3px;
+        pointer-events:none;">
+  </span>
+</div>
+</div>
 
-</svg>
+    <!-- Título + tagline -->
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight leading-snug text-[#333333]">
+      Acompañamiento integral para todas las edades
+    </h1>
   
-
-  <!-- CONTENIDO -->
-  <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center w-full">
-    <!-- Texto -->
-    <div class="relative z-10">
-      <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
-        Acompañamiento integral para niños, adolescentes y adultos
-      </h1>
-      <p class="mt-4 text-lg text-slate-700 max-w-xl">
-        Psicología, Psicopedagogía, Fonoaudiología, Psicomotricidad y Nutrición.
-        Un mismo equipo, un mismo objetivo: tu bienestar.
-      </p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href="https://wa.me/5490000000000?text=Hola%20PsicoSalud%2C%20me%20gustar%C3%ADa%20pedir%20un%20turno"
-           class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-brand-turquoise text-white font-semibold shadow-soft hover:opacity-90">
-          Pedir turno por WhatsApp
-        </a>
-        <a href="#autoevaluacion"
-           class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-900 text-white font-semibold shadow-soft hover:bg-slate-800">
-          Realizá tu autoevaluación
-        </a>
-      </div>
-      <div class="mt-3 text-sm text-slate-600">Obras sociales, particulares y CUD.</div>
-    </div>
+   <h2 class="mt-2 text-lg sm:text-xl md:text-2xl font-medium text-[#4B4B4B] max-w-2xl mx-auto">
+  Un espacio profesional y humano en Berrotarán.
+</h2>
 
    
+
+    <!-- Botón Contacto  -->
+    <div class="mt-6">
+      <a href="#contacto"
+         class="inline-flex items-center rounded-full bg-[#A8E6CF] px-6 py-3 text-[#184B47] font-semibold
+                shadow-md hover:shadow-lg hover:opacity-95 border border-[#7FD8BE]/60 transition">
+        Contacto
+      </a>
+    </div>
+
+    <!-- Cards-->
+    <div class="mt-12 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 text-left">
+
+      <a href="#psicologia"
+         class="group block rounded-2xl p-4 sm:p-5 text-white shadow hover:shadow-md transition
+                focus:outline-none focus:ring-4 focus:ring-white/50 min-h-[96px]"
+         style="background:#3BAAA7">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h3 class="font-bold">Psicología</h3>
+            <p class="text-sm/5 opacity-95">Infancias, adolescentes y adultos.</p>
+          </div>
+          <span class="shrink-0 mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/15 group-hover:bg-white/25">
+            <svg viewBox="0 0 20 20" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 5l6 5-6 5"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="#psicopedagogia"
+         class="group block rounded-2xl p-4 sm:p-5 text-white shadow hover:shadow-md transition
+                focus:outline-none focus:ring-4 focus:ring-white/50 min-h-[96px]"
+         style="background:#2B9ED8">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h3 class="font-bold">Psicopedagogía</h3>
+            <p class="text-sm/5 opacity-95">Aprendizajes y estrategias.</p>
+          </div>
+          <span class="shrink-0 mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/15 group-hover:bg-white/25">
+            <svg viewBox="0 0 20 20" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 5l6 5-6 5"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="#fonoaudiologia"
+         class="group block rounded-2xl p-4 sm:p-5 text-white shadow hover:shadow-md transition
+                focus:outline-none focus:ring-4 focus:ring-white/50 min-h-[96px]"
+         style="background:#EF6EA8">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h3 class="font-bold">Fonoaudiología</h3>
+            <p class="text-sm/5 opacity-95">Lenguaje, habla y deglución.</p>
+          </div>
+          <span class="shrink-0 mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/15 group-hover:bg-white/25">
+            <svg viewBox="0 0 20 20" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 5l6 5-6 5"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="#psicomotricidad"
+         class="group block rounded-2xl p-4 sm:p-5 text-[#2a2a2a] shadow hover:shadow-md transition
+                focus:outline-none focus:ring-4 focus:ring-white/50 min-h-[96px]"
+         style="background:#F9C846">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h3 class="font-bold">Psicomotricidad</h3>
+            <p class="text-sm/5 opacity-90">Movimiento y desarrollo.</p>
+          </div>
+          <span class="shrink-0 mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-black/10 group-hover:bg-black/15">
+            <svg viewBox="0 0 20 20" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 5l6 5-6 5"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="#servicios"
+         class="group block rounded-2xl p-4 sm:p-5 text-[#2a2a2a] bg-white border border-[#3BAAA7]/30 shadow hover:shadow-md transition
+                focus:outline-none focus:ring-4 focus:ring-[#3BAAA7]/30 min-h-[96px]">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h3 class="font-bold text-[#3BAAA7]">Servicios complementarios</h3>
+            <p class="text-sm/5 opacity-90">Nutrición <br/> Apoyo escolar.</p>
+          </div>
+          <span class="shrink-0 mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#3BAAA7]/10 group-hover:bg-[#3BAAA7]/20">
+            <svg viewBox="0 0 20 20" class="h-4 w-4 text-[#3BAAA7]" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 5l6 5-6 5"/></svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
   </div>
+  <!-- Ola -->
+<svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fade-turquoise" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFDE7" />
+      <stop offset="100%" stop-color="#5ECAC7" />
+    </linearGradient>
+  </defs>
+  <path fill="url(#fade-turquoise)" d="M0,64L80,80C160,96,320,128,480,128C640,128,800,96,960,85.3C1120,75,1280,85,1360,90.7L1440,96L1440,160L1360,160C1280,160,1120,160,960,160C800,160,640,160,480,160C320,160,160,160,80,160L0,160Z"></path>
+</svg>
 </section>
 
-
-<!-- Nosotros -->
-<section id="nosotros" class="py-16 md:py-20">
-  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+ 
+<!-- SOBRE NOSOTROS -->
+<section id="sobre-nosotros" class="pt-16 md:pt-20 pb-14 md:pb-16 bg-white scroll-mt-24 md:scroll-mt-28">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-[minmax(0,1fr)_380px] gap-10 items-start">
     <!-- Texto -->
     <div>
-      <span class="inline-flex items-center gap-2 text-sm font-semibold text-brand-dark bg-brand-mint/30 px-3 py-1 rounded-full">
-        Sobre PsicoSalud
-      </span>
-      <h2 class="mt-3 text-2xl md:text-3xl font-extrabold">
-        Un equipo interdisciplinario, un mismo objetivo: tu bienestar
-      </h2>
-      <p class="mt-3 text-slate-600">
-        Trabajamos de manera coordinada en Psicología, Psicopedagogía, Fonoaudiología, Psicomotricidad y Nutrición
-        para acompañar a <strong>niños, adolescentes y adultos</strong> con un enfoque humano y basado en evidencia.
+     
+
+    
+      <h2 class="text-xl md:text-2xl font-semibold tracking-tight text-[#333]">
+  Sobre PsicoSalud
+</h2>
+
+      <p class="mt-3 text-[#4B4B4B]">
+        Trabajamos de manera coordinada para acompañar a niños, adolescentes y adultos con un enfoque humano y basado en evidencia.
       </p>
 
-      <ul class="mt-4 space-y-2 text-slate-700">
+      <!-- Bullets -->
+      <ul class="mt-5 space-y-3 text-[#3E3E3E]">
         <li class="flex items-start gap-3">
-          <svg class="w-5 h-5 mt-0.5" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#63D1C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="mt-1 inline-block h-3.5 w-3.5 rounded-full" style="background:#2B9ED8"></span>
           <span>Abordaje empático, respetuoso y centrado en la familia.</span>
         </li>
         <li class="flex items-start gap-3">
-          <svg class="w-5 h-5 mt-0.5" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#63D1C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="mt-1 inline-block h-3.5 w-3.5 rounded-full" style="background:#EF6EA8"></span>
           <span>Trabajo en red con escuelas y otros profesionales cuando es necesario.</span>
         </li>
         <li class="flex items-start gap-3">
-          <svg class="w-5 h-5 mt-0.5" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#63D1C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="mt-1 inline-block h-3.5 w-3.5 rounded-full" style="background:#FFF59D"></span>
           <span>Derivaciones responsables y orientación a madres y padres.</span>
         </li>
       </ul>
 
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href="https://wa.me/5490000000000?text=Hola%20PsicoSalud%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n"
-           class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-brand-turquoise text-white font-semibold shadow-soft hover:opacity-90">
-          Escribinos por WhatsApp
-        </a>
-        <a href="https://www.instagram.com/psicosaludberrotaran" target="_blank"
-           class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200">
-          Seguinos en Instagram
-        </a>
+      <!-- Chips -->
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="px-3 py-1 rounded-full bg-[#F7FBFA] border border-[#2F8E8A]/40 text-sm text-[#184B47]">Obras sociales</span>
+        <span class="px-3 py-1 rounded-full bg-[#F7FBFA] border border-[#2F8E8A]/40 text-sm text-[#184B47]">Particulares</span>
+        <span class="px-3 py-1 rounded-full bg-[#F7FBFA] border border-[#2F8E8A]/40 text-sm text-[#184B47]">Certificado Único de Discapacidad</span>
       </div>
-      <p class="mt-2 text-xs text-slate-500">Atención en Rogelio Martínez 360, Berrotarán, Córdoba.</p>
     </div>
 
-    <!-- Imagen / tarjeta visual -->
-    <div class="relative">
-      <div class="bg-white rounded-2xl p-2 shadow-soft border-t-4 border-brand-turquoise/30">
-        <img src="/assets/equipo.jpg"
-             onerror="this.src='https://images.unsplash.com/photo-1554774853-b415df9eeb92?q=80&w=1600&auto=format&fit=crop'"
-             alt="Equipo PsicoSalud"
-             class="rounded-xl object-cover w-full h-[320px] md:h-[360px]">
+    <!-- Imagen fundadoras (larger + centered better) -->
+    <div class="relative w-full md:w-[380px] justify-self-center md:justify-self-end mt-8 md:mt-6">
+      <div class="flex justify-center">
+        <figure class="rounded-2xl overflow-hidden bg-white shadow-sm">
+        <img
+  src="/assets/fundadoras.png"
+  alt="Lic. Alejandra Bergonzi y Lic. Shirley Cabral, socias fundadoras"
+  class="w-full h-auto object-contain"
+  loading="lazy"
+/>
+
+        </figure>
       </div>
-      <img src="/assets/logo-psicosalud.png" alt="PsicoSalud" class="absolute -bottom-4 -right-4 w-16 md:w-20 drop-shadow">
+
+      <figcaption class="mt-3 text-center text-sm text-[#4B4B4B]">
+        Lic. Alejandra Bergonzi y Lic. Shirley Cabral, <span class="font-medium">socias fundadoras</span>.
+      </figcaption>
     </div>
   </div>
 </section>
+<!-- ÁREAS DE TRABAJO  -->
+<section id="areas" class="relative pt-8 md:pt-10 pb-14 md:pb-16 bg-white">
+  <!-- Divider overlaid -->
+  <div aria-hidden="true" class="pointer-events-none absolute -top-6 left-0 right-0">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-center">
+        <div class="absolute inset-0 flex items-center">
+          <div class="w-full h-[2px] bg-[#5ECAC7]/45"></div>
+        </div>
+        <div class="relative bg-white px-4">
+          <img
+            src="/assets/logo-solo.jpg"
+            alt=""
+            class="w-12 h-12 rounded-full border-2 border-[#5ECAC7] p-0.5 bg-white shadow-sm"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- Áreas -->
-<section id="areas" class="py-16 md:py-20 bg-slate-50">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-2xl md:text-3xl font-extrabold">Áreas de trabajo</h2>
+  <!-- content -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-xl md:text-2xl font-semibold tracking-tight text-[#333]">Áreas de trabajo</h2>
     <p class="mt-2 text-slate-600">Intervenciones basadas en evidencia, coordinadas por un equipo humano y cercano.</p>
 
-    <div class="mt-8 grid md:grid-cols-3 gap-6">
-      <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-turquoise/30">
-        <div class="flex items-center gap-2">
-          <svg class="w-5 h-5" viewBox="0 0 22 22" aria-hidden="true">
-            <circle cx="7" cy="7" r="5" fill="#63D1C1"/>
-            <circle cx="15" cy="7" r="5" fill="#FFF59D"/>
-            <circle cx="7" cy="15" r="5" fill="#F48FB1"/>
-            <circle cx="15" cy="15" r="5" fill="#A8E6CF"/>
-          </svg>
-          <h3 class="font-bold text-lg">Psicología</h3>
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] transition-shadow">
+        <div class="flex items-center">
+          <h3 class="text-base md:text-lg font-semibold text-slate-800">Psicología</h3>
         </div>
-        <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
-          <li>Terapia cognitivo-conductual</li>
-          <li>Terapia breve focalizada</li>
-          <li>Orientación para familias</li>
+        <ul class="mt-3 space-y-2 text-[15px] text-slate-700">
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Terapia cognitivo-conductual</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Terapia breve focalizada</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Atención a niños y adultos</span>
+          </li>
         </ul>
       </article>
 
-      <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-turquoise/30">
-        <div class="flex items-center gap-2">
-          <svg class="w-5 h-5" viewBox="0 0 22 22" aria-hidden="true">
-            <circle cx="7" cy="7" r="5" fill="#A8E6CF"/>
-            <circle cx="15" cy="7" r="5" fill="#63D1C1"/>
-            <circle cx="7" cy="15" r="5" fill="#FFF59D"/>
-            <circle cx="15" cy="15" r="5" fill="#F48FB1"/>
-          </svg>
-          <h3 class="font-bold text-lg">Psicopedagogía</h3>
+      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] transition-shadow">
+        <div class="flex items-center">
+          <h3 class="text-base md:text-lg font-semibold text-slate-800">Psicopedagogía</h3>
         </div>
-        <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
-          <li>Evaluación neurocognitiva</li>
-          <li>Tratamientos para niños y adolescentes</li>
-          <li>Inclusión escolar</li>
+        <ul class="mt-3 space-y-2 text-[15px] text-slate-700">
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Evaluación neurocognitiva</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Tratamientos para niños y adolescentes</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Inclusión escolar</span>
+          </li>
         </ul>
       </article>
 
-      <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-turquoise/30">
-        <div class="flex items-center gap-2">
-          <svg class="w-5 h-5" viewBox="0 0 22 22" aria-hidden="true">
-            <circle cx="7" cy="7" r="5" fill="#F48FB1"/>
-            <circle cx="15" cy="7" r="5" fill="#A8E6CF"/>
-            <circle cx="7" cy="15" r="5" fill="#63D1C1"/>
-            <circle cx="15" cy="15" r="5" fill="#FFF59D"/>
-          </svg>
-          <h3 class="font-bold text-lg">Fonoaudiología</h3>
+      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] transition-shadow">
+        <div class="flex items-center">
+          <h3 class="text-base md:text-lg font-semibold text-slate-800">Fonoaudiología</h3>
         </div>
-        <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
-          <li>Lenguaje y comunicación</li>
-          <li>Motricidad orofacial</li>
-          <li>Atención con y sin CUD</li>
+        <ul class="mt-3 space-y-2 text-[15px] text-slate-700">
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Lenguaje y comunicación</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Motricidad orofacial</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Atención con y sin CUD</span>
+          </li>
         </ul>
       </article>
 
-      <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-turquoise/30">
-        <div class="flex items-center gap-2">
-          <svg class="w-5 h-5" viewBox="0 0 22 22" aria-hidden="true">
-            <circle cx="7" cy="7" r="5" fill="#FFF59D"/>
-            <circle cx="15" cy="7" r="5" fill="#F48FB1"/>
-            <circle cx="7" cy="15" r="5" fill="#A8E6CF"/>
-            <circle cx="15" cy="15" r="5" fill="#63D1C1"/>
-          </svg>
-          <h3 class="font-bold text-lg">Psicomotricidad</h3>
+      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] transition-shadow">
+        <div class="flex items-center">
+          <h3 class="text-base md:text-lg font-semibold text-slate-800">Psicomotricidad</h3>
         </div>
-        <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
-          <li>Intervención educativa y terapéutica</li>
-          <li>Estimulación temprana y cognitiva</li>
-          <li>Adultos mayores</li>
+        <ul class="mt-3 space-y-2 text-[15px] text-slate-700">
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Intervención educativa y terapéutica</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Estimulación temprana y cognitiva</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Adultos mayores</span>
+          </li>
         </ul>
       </article>
 
-      <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-turquoise/30">
-        <div class="flex items-center gap-2">
-          <svg class="w-5 h-5" viewBox="0 0 22 22" aria-hidden="true">
-            <circle cx="7" cy="7" r="5" fill="#63D1C1"/>
-            <circle cx="15" cy="7" r="5" fill="#A8E6CF"/>
-            <circle cx="7" cy="15" r="5" fill="#FFF59D"/>
-            <circle cx="15" cy="15" r="5" fill="#F48FB1"/>
-          </svg>
-          <h3 class="font-bold text-lg">Nutrición</h3>
+      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] transition-shadow">
+        <div class="flex items-center">
+          <h3 class="text-base md:text-lg font-semibold text-slate-800">Nutrición</h3>
         </div>
-        <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
-          <li>Abordaje empático e integral</li>
-          <li>Educación alimentaria</li>
-          <li>Planes personalizados</li>
+        <ul class="mt-3 space-y-2 text-[15px] text-slate-700">
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Abordaje empático e integral</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Educación alimentaria</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Planes personalizados</span>
+          </li>
         </ul>
       </article>
 
-      <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-turquoise/30">
-        <div class="flex items-center gap-2">
-          <svg class="w-5 h-5" viewBox="0 0 22 22" aria-hidden="true">
-            <circle cx="7" cy="7" r="5" fill="#F48FB1"/>
-            <circle cx="15" cy="7" r="5" fill="#63D1C1"/>
-            <circle cx="7" cy="15" r="5" fill="#A8E6CF"/>
-            <circle cx="15" cy="15" r="5" fill="#FFF59D"/>
-          </svg>
-          <h3 class="font-bold text-lg">Acompañamiento familiar</h3>
+      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] transition-shadow">
+        <div class="flex items-center">
+          <h3 class="text-base md:text-lg font-semibold text-slate-800">Apoyo Escolar</h3>
         </div>
-        <ul class="mt-2 text-sm list-disc pl-5 space-y-1">
-          <li>Orientación a madres y padres</li>
-          <li>Trabajo con la escuela</li>
-          <li>Derivaciones responsables</li>
+        <ul class="mt-3 space-y-2 text-[15px] text-slate-700">
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Orientación a madres y padres</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Trabajo con la escuela</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <img src="/assets/logo-solo.jpg" alt="" class="mt-1 w-4 h-4 rounded-full border border-[#5ECAC7] p-[1px] bg-white">
+            <span>Derivaciones responsables</span>
+          </li>
         </ul>
       </article>
+    </div>
+    </section>
+
+<!-- NUESTRO EQUIPO  -->
+<section id="equipo" class="relative pt-10 md:pt-12 pb-20 md:pb-24 bg-white">
+  <!-- Divider overlaid -->
+  <div aria-hidden="true" class="pointer-events-none absolute -top-6 left-0 right-0">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-center">
+        <div class="absolute inset-0 flex items-center">
+          <div class="w-full h-[2px] bg-[#5ECAC7]/45"></div>
+        </div>
+        <div class="relative bg-white px-4">
+          <img
+            src="/assets/logo-solo.jpg"
+            alt=""
+            class="w-12 h-12 rounded-full border-2 border-[#5ECAC7] p-0.5 bg-white shadow-sm"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Equipo -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-xl md:text-2xl font-semibold tracking-tight text-[#333]">Nuestro Equipo</h2>
+      <p class="mt-2 text-slate-600">Profesionales comprometidos con un abordaje integral.</p>
+
+    <!-- Grid -->
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Card -->
+      <div class="bg-white rounded-2xl p-6 shadow-soft h-full">
+        <div class="relative w-fit mx-auto -mt-10 mb-4">
+          <div class="absolute inset-0 rounded-full border-[2px] border-[#5ECAC7] scale-[1.08]
+                      shadow-[0_0_6px_rgba(94,202,199,0.25)]"></div>
+          <img src="/assets/psicologa.png" alt="Lic. Alejandra Bergonzi"
+               class="relative w-20 h-20 rounded-full object-cover border-[3px] border-white shadow" />
+        </div>
+        <h3 class="text-center font-bold text-[15px]">Lic. Alejandra Bergonzi</h3>
+        <p class="text-center text-sm text-slate-600">Psicóloga – M.P. 11411</p>
+        <p class="text-center text-sm text-slate-600">Tel: (0358) 482-1525</p>
+       <div class="text-center">
+        <a href="https://wa.me/5493584821525" target="_blank"
+           class="group mt-3 inline-flex items-center justify-center gap-2 mx-auto px-3 py-1.5 text-sm
+                  border border-[#5ECAC7] text-[#184B47] rounded-full
+                  hover:bg-[#5ECAC7] hover:text-white transition-colors duration-200">
+          <img src="/assets/whatsapp.svg" alt="" class="w-4 h-4 transition-colors duration-200 group-hover:invert">
+          WhatsApp
+        </a>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="bg-white rounded-2xl p-6 shadow-soft h-full">
+        <div class="relative w-fit mx-auto -mt-10 mb-4">
+          <div class="absolute inset-0 rounded-full border-[2px] border-[#5ECAC7] scale-[1.08]
+                      shadow-[0_0_6px_rgba(94,202,199,0.25)]"></div>
+          <img src="/assets/psicopedagoga.png" alt="Lic. Shirley Cabral"
+               class="relative w-20 h-20 rounded-full object-cover border-[3px] border-white shadow" />
+        </div>
+        <h3 class="text-center font-bold text-[15px]">Lic. Shirley Cabral</h3>
+        <p class="text-center text-sm text-slate-600">Psicopedagoga – M.P. 223876</p>
+        <p class="text-center text-sm text-slate-600">Tel: (0358) 419-4612</p>
+        <div class="text-center">
+        <a href="https://wa.me/5493584194612" target="_blank"
+           class="group mt-3 inline-flex items-center justify-center gap-2 mx-auto px-3 py-1.5 text-sm
+                  border border-[#5ECAC7] text-[#184B47] rounded-full
+                  hover:bg-[#5ECAC7] hover:text-white transition-colors duration-200">
+          <img src="/assets/whatsapp.svg" alt="" class="w-4 h-4 transition-colors duration-200 group-hover:invert">
+          WhatsApp
+        </a>
+      </div>
+      </div>
+
+      <!-- Card -->
+      <div class="bg-white rounded-2xl p-6 shadow-soft h-full">
+        <div class="relative w-fit mx-auto -mt-10 mb-4">
+          <div class="absolute inset-0 rounded-full border-[2px] border-[#5ECAC7] scale-[1.08]
+                      shadow-[0_0_6px_rgba(94,202,199,0.25)]"></div>
+          <img src="/assets/image-placeholder.png" alt="Lic. Andrea Cabral"
+               class="relative w-20 h-20 rounded-full object-cover border-[3px] border-white shadow" />
+        </div>
+        <h3 class="text-center font-bold text-[15px]">Lic. Andrea Cabral</h3>
+        <p class="text-center text-sm text-slate-600">Nutrición – M.P. 4940</p>
+        <p class="text-center text-sm text-slate-600">Tel: (0358) 752-9630</p>
+        <div class="text-center">
+        <a href="https://wa.me/5493587529630" target="_blank"
+           class="group mt-3 inline-flex items-center justify-center gap-2 mx-auto px-3 py-1.5 text-sm
+                  border border-[#5ECAC7] text-[#184B47] rounded-full
+                  hover:bg-[#5ECAC7] hover:text-white transition-colors duration-200">
+          <img src="/assets/whatsapp.svg" alt="" class="w-4 h-4 transition-colors duration-200 group-hover:invert">
+          WhatsApp
+        </a>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="bg-white rounded-2xl p-6 shadow-soft h-full">
+        <div class="relative w-fit mx-auto -mt-10 mb-4">
+          <div class="absolute inset-0 rounded-full border-[2px] border-[#5ECAC7] scale-[1.08]
+                      shadow-[0_0_6px_rgba(94,202,199,0.25)]"></div>
+          <img src="/assets/image-placeholder.png" alt="Ana Luz Luna"
+               class="relative w-20 h-20 rounded-full object-cover border-[3px] border-white shadow" />
+        </div>
+        <h3 class="text-center font-bold text-[15px]">Ana Luz Luna</h3>
+        <p class="text-center text-sm text-slate-600">Fonoaudióloga – M.P. 9500</p>
+        <p class="text-center text-sm text-slate-600">Tel: (03571) 577-492</p>
+        <div class="text-center">
+        <a href="https://wa.me/543571577492" target="_blank"
+           class="group mt-3 inline-flex items-center justify-center gap-2 mx-auto px-3 py-1.5 text-sm
+                  border border-[#5ECAC7] text-[#184B47] rounded-full
+                  hover:bg-[#5ECAC7] hover:text-white transition-colors duration-200">
+          <img src="/assets/whatsapp.svg" alt="" class="w-4 h-4 transition-colors duration-200 group-hover:invert">
+          WhatsApp
+        </a>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="bg-white rounded-2xl p-6 shadow-soft h-full">
+        <div class="relative w-fit mx-auto -mt-10 mb-4">
+          <div class="absolute inset-0 rounded-full border-[2px] border-[#5ECAC7] scale-[1.08]
+                      shadow-[0_0_6px_rgba(94,202,199,0.25)]"></div>
+          <img src="/assets/image-placeholder.png" alt="Fernanda Tissera"
+               class="relative w-20 h-20 rounded-full object-cover border-[3px] border-white shadow" />
+        </div>
+        <h3 class="text-center font-bold text-[15px]">Fernanda Tissera</h3>
+        <p class="text-center text-sm text-slate-600">Psicomotricista – M.P. 11774</p>
+        <p class="text-center text-sm text-slate-600">Tel: (03571) 592-824</p>
+        <div class="text-center">
+        <a href="https://wa.me/543571592824" target="_blank"
+           class="group mt-3 inline-flex items-center justify-center gap-2 mx-auto px-3 py-1.5 text-sm
+                  border border-[#5ECAC7] text-[#184B47] rounded-full
+                  hover:bg-[#5ECAC7] hover:text-white transition-colors duration-200">
+          <img src="/assets/whatsapp.svg" alt="" class="w-4 h-4 transition-colors duration-200 group-hover:invert">
+          WhatsApp
+        </a>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="bg-white rounded-2xl p-6 shadow-soft h-full">
+        <div class="relative w-fit mx-auto -mt-10 mb-4">
+          <div class="absolute inset-0 rounded-full border-[2px] border-[#5ECAC7] scale-[1.08]
+                      shadow-[0_0_6px_rgba(94,202,199,0.25)]"></div>
+          <img src="/assets/image-placeholder.png" alt="Virginia Rossetti"
+               class="relative w-20 h-20 rounded-full object-cover border-[3px] border-white shadow" />
+        </div>
+        <h3 class="text-center font-bold text-[15px]">Virginia Rossetti</h3>
+        <p class="text-center text-sm text-slate-600">Prof. de Educación Especial</p>
+        <p class="text-center text-sm text-slate-600">Tel: (0358) 1234-5678</p>
+        <div class="text-center">
+          <a href="https://wa.me/54935812345678" target="_blank"
+           class="group mt-3 inline-flex items-center justify-center gap-2 mx-auto px-3 py-1.5 text-sm
+                  border border-[#5ECAC7] text-[#184B47] rounded-full
+                  hover:bg-[#5ECAC7] hover:text-white transition-colors duration-200">
+          <img src="/assets/whatsapp.svg" alt="" class="w-4 h-4 transition-colors duration-200 group-hover:invert">
+          WhatsApp
+        </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 
-  <!-- Equipo -->
-  <section id="equipo" class="py-16 md:py-20">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-extrabold">Nuestro equipo</h2>
-      <p class="mt-2 text-slate-600">Profesionales comprometidos con un abordaje integral.</p>
+  <!-- AUTOEVALUACIÓN -->
+<section id="autoevaluacion" class="relative py-12 md:py-16 bg-[#49BDB9]">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-white">
+        Autoevaluación orientativa
+      </h2>
 
-      <!-- Cards del equipo (pueden reemplazarse por fotos reales) -->
-      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Ejemplos basados en el feed -->
-        <div class="bg-white rounded-2xl p-6 shadow-soft">
-          <img alt="Lic. Alejandra Bergonzi" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=800&auto=format&fit=crop"
-               class="w-24 h-24 rounded-full object-cover border-4 border-white shadow -mt-12 mb-4 mx-auto">
-          <h3 class="text-center font-bold">Lic. Alejandra Bergonzi</h3>
-          <p class="text-center text-sm text-slate-600">Psicóloga — M.P. 11411</p>
-        </div>
-
-        <div class="bg-white rounded-2xl p-6 shadow-soft">
-          <img alt="Lic. Shirley Cabral" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop"
-               class="w-24 h-24 rounded-full object-cover border-4 border-white shadow -mt-12 mb-4 mx-auto">
-          <h3 class="text-center font-bold">Lic. Shirley Cabral</h3>
-          <p class="text-center text-sm text-slate-600">Psicopedagoga — M.P. 223876</p>
-        </div>
-
-        <div class="bg-white rounded-2xl p-6 shadow-soft">
-          <img alt="Lic. Andrea Cabral" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop"
-               class="w-24 h-24 rounded-full object-cover border-4 border-white shadow -mt-12 mb-4 mx-auto">
-          <h3 class="text-center font-bold">Lic. Andrea Cabral</h3>
-          <p class="text-center text-sm text-slate-600">Nutrición — M.P. 4940</p>
-        </div>
-
-        <div class="bg-white rounded-2xl p-6 shadow-soft">
-          <img alt="Virginia Rossetti" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=800&auto=format&fit=crop"
-               class="w-24 h-24 rounded-full object-cover border-4 border-white shadow -mt-12 mb-4 mx-auto">
-          <h3 class="text-center font-bold">Virginia Rossetti</h3>
-          <p class="text-center text-sm text-slate-600">Prof. de Educación Especial</p>
-        </div>
-
-        <div class="bg-white rounded-2xl p-6 shadow-soft">
-          <img alt="Ana Luz Luna" src="https://images.unsplash.com/photo-1541534401786-2077eed87a72?q=80&w=800&auto=format&fit=crop"
-               class="w-24 h-24 rounded-full object-cover border-4 border-white shadow -mt-12 mb-4 mx-auto">
-          <h3 class="text-center font-bold">Ana Luz Luna</h3>
-          <p class="text-center text-sm text-slate-600">Fonoaudióloga — M.P. 9500</p>
-        </div>
-
-        <div class="bg-white rounded-2xl p-6 shadow-soft">
-          <img alt="Fernanda Tissera" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop"
-               class="w-24 h-24 rounded-full object-cover border-4 border-white shadow -mt-12 mb-4 mx-auto">
-          <h3 class="text-center font-bold">Fernanda Tissera</h3>
-          <p class="text-center text-sm text-slate-600">Psicomotricista — M.P. 11774</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Autoevaluación -->
-  <section id="autoevaluacion" class="py-16 md:py-20 bg-gradient-to-b from-brand-mint/30 to-white">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-2xl md:text-3xl font-extrabold">Autoevaluación orientativa</h2>
-      <p class="mt-3 text-slate-700">
-        Responé 8 preguntas rápidas y recibí una orientación inicial sobre qué tipo de acompañamiento podría ser útil.
-        No reemplaza una evaluación profesional.
+      <p class="mt-4 text-white/95 leading-relaxed md:leading-loose">
+        Si no estás seguro si necesitás 
+        <span class="font-bold">Psicología, Psicopedagogía, Fonoaudiología o Psicomotricidad</span>, 
+        completá primero la autoevaluación. Para especialidades sin evaluación - por ejemplo <span class="font-bold" >Nutrición y Apoyo Escolar </span> - 
+        buscá el número directamente en el directorio de contactos.
       </p>
-      <a href="/autoevaluacion.html" class="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-slate-900 text-white font-semibold shadow-soft hover:bg-slate-800">
+
+      <!-- CTA in branding yellow with pink text -->
+      <a href="/autoevaluacion.html"
+         class="mt-6 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl
+                bg-[#FFF59D] text-[#F48FB1] font-semibold shadow-soft
+                ring-1 ring-black/5 hover:bg-[#FFE97A] transition-colors">
         Empezar autoevaluación
       </a>
-      <p class="mt-2 text-xs text-slate-500">Luego vas a poder agendar un turno por WhatsApp.</p>
-    </div>
-  </section>
 
-  <!-- Contacto -->
-  <section id="contacto" class="py-16 md:py-20">
-    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
-      <div class="bg-white rounded-2xl p-8 shadow-soft">
-        <h2 class="text-2xl font-extrabold">Ubicación y contacto</h2>
-        <p class="mt-2 text-slate-600">Rogelio Martínez 360, Berrotarán, Córdoba</p>
-        <div class="mt-5 space-y-3 text-sm">
-          <div class="flex items-center gap-2"><span class="font-semibold">Tel:</span> 358-4821525 / 351-7529630 / 3571-520689 (según área)</div>
-          <div class="flex items-center gap-2"><span class="font-semibold">Instagram:</span> <a class="text-brand-dark underline" href="https://www.instagram.com/psicosaludberrotaran" target="_blank">@psicosaludberrotaran</a></div>
-          <div class="flex items-center gap-2"><span class="font-semibold">WhatsApp:</span> <a class="text-brand-dark underline" href="https://wa.me/5490000000000" target="_blank">Enviar mensaje</a></div>
-        </div>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="https://wa.me/5490000000000?text=Hola%20PsicoSalud%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n"
-             class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-brand-turquoise text-white font-semibold shadow-soft hover:opacity-90">
-            WhatsApp
+      <p class="mt-3 text-xs text-white/90">
+        Luego vas a poder agendar un turno por WhatsApp.
+      </p>
+      <p class="mt-2 text-[11px] text-white/80">
+        <em>Nota:</em> Esta autoevaluación es orientativa y no reemplaza una evaluación profesional.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO (final tidy version) -->
+<section id="contacto" class="relative py-10 md:py-12 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 items-center">
+    
+    <!-- Texto -->
+    <div>
+      <h2 class="text-xl md:text-2xl font-semibold text-[#333] mb-3">Contacto</h2>
+
+      <div class="space-y-3 text-slate-700 leading-relaxed">
+        <p>
+          No contamos con un número general. Si ya sabés con quién comunicarte, visitá
+          <a href="#equipo" class="text-[#3BAAA7] font-medium underline underline-offset-4 hover:text-[#257370] transition">
+            nuestro equipo
           </a>
-          <a href="https://www.instagram.com/psicosaludberrotaran" target="_blank"
-             class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200">
-            Instagram
+          y enviá un mensaje directo por WhatsApp.
+        </p>
+        <p>
+          Si no estás seguro, completá la
+          <a href="/autoevaluacion.html" class="text-[#3BAAA7] font-medium underline underline-offset-4 hover:text-[#257370] transition">
+            autoevaluación orientativa
           </a>
-        </div>
+          para recibir una orientación inicial.
+        </p>
       </div>
 
-      <div class="rounded-2xl overflow-hidden shadow-soft h-80">
-        <!-- Mapa embebido (lugar aproximado; reemplazar por ubicación exacta si lo desean) -->
-        <iframe title="Mapa Berrotarán" class="w-full h-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=Berrotar%C3%A1n%2C%20C%C3%B3rdoba&output=embed"></iframe>
+      <!-- Compact CTAs -->
+      <div class="mt-5 flex flex-wrap gap-3">
+        <a href="#equipo"
+           class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl border border-[#5ECAC7] text-[#184B47] hover:bg-[#5ECAC7]/10 transition font-medium">
+          Ver equipo y WhatsApp
+        </a>
+        <a href="/autoevaluacion.html"
+           class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-[#FFF59D] text-[#F48FB1] font-semibold ring-1 ring-black/5 hover:bg-[#FFE97A] transition">
+          Hacer autoevaluación
+        </a>
       </div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="border-t border-slate-100">
-    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-slate-500">© <span id="year"></span> PsicoSalud Berrotarán — Equipo Interdisciplinario</p>
-      <p class="text-sm text-slate-400">Desarrollado por <a href="https://sierracodes.com" target="_blank" class="underline">Sierra Codes</a></p>
+    <!-- Instagram card -->
+    <div class="bg-slate-50 rounded-2xl p-8 shadow-soft text-center">
+      <img src="/assets/logo-solo.jpg" alt="PsicoSalud Berrotarán"
+           class="w-14 h-14 rounded-full border border-[#5ECAC7] mx-auto mb-4 shadow-sm">
+      <p class="text-slate-700 leading-relaxed">
+        Seguinos en Instagram para conocer nuestras actividades, equipo y novedades.
+      </p>
+      <a href="https://www.instagram.com/psicosaludberrotaran" target="_blank" rel="noopener"
+         class="mt-4 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#5ECAC7] text-white font-medium shadow-sm hover:bg-[#49BDB9] transition">
+        Instagram @psicosaludberrotaran
+      </a>
     </div>
-  </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  </div>
+</section>
+
+
+<!-- FOOTER and CONTACT -->
+<footer class="border-t border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-2">
+    <p class="text-sm text-slate-500">© <span id="year"></span> PsicoSalud Berrotarán - Equipo Interdisciplinario</p>
+    <p class="text-sm text-slate-400">Desarrollado por <a href="https://sierracodes.netlify.app/" target="_blank" class="underline">Sierra Codes</a></p>
+  </div>
+</footer>
+
+
+<!-- Scroll Buttons -->
+<button id="scrollToTop"
+  class="hidden fixed bottom-6 right-6 z-50 p-3 rounded-full bg-[#5ECAC7] text-white shadow-md hover:bg-[#49BDB9] transition duration-300"
+  aria-label="Volver arriba">
+  <!-- Up arrow -->
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-5 h-5 mx-auto">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+  </svg>
+</button>
+
+<button id="scrollToBottom"
+  class="fixed bottom-6 right-16 z-50 p-3 rounded-full bg-[#5ECAC7] text-white shadow-md hover:bg-[#49BDB9] transition duration-300"
+  aria-label="Bajar al final">
+  <!-- Down arrow -->
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-5 h-5 mx-auto">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+</button>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+ const toTop = document.getElementById('scrollToTop');
+  const toBottom = document.getElementById('scrollToBottom');
+
+  window.addEventListener('scroll', () => {
+    const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
+    // show top button after scroll down
+    if (window.scrollY > 400) {
+      toTop.classList.remove('hidden');
+    } else {
+      toTop.classList.add('hidden');
+    }
+    // hide bottom button near end of page
+    if (nearBottom) {
+      toBottom.classList.add('hidden');
+    } else {
+      toBottom.classList.remove('hidden');
+    }
+  });
+
+  toTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  toBottom.addEventListener('click', () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  });
+</script>
 </body>
 </html>
