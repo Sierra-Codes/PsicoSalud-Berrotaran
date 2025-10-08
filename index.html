@@ -3,9 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>PsicoSalud Berrotarán: Acompañamiento integral</title>
-<link rel="icon" type="image/jpeg" href="/assets/logo-solo.jpg">
-  <meta name="description" content="Equipo interdisciplinario en Berrotarán. Psicología, Psicopedagogía, Fonoaudiología, Psicomotricidad y Nutrición. Turnos por WhatsApp. Autoevaluación orientativa online." />
+
+  <title>PsicoSalud Berrotarán: Acompañamiento integral</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="/assets/logo-solo.jpg" />
+
+  <!-- Canonical (set your final URL) -->
+  <!-- Replace with your production domain -->
+  <link rel="canonical" href="https://www.ejemplo.com/" />
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Equipo interdisciplinario en Berrotarán (Córdoba). Psicología, Psicopedagogía, Fonoaudiología, Psicomotricidad y Nutrición. Turnos por WhatsApp. Autoevaluación orientativa online. Atención también a pacientes de Elena, Alcira Gigena, Los Cóndores, Almafuerte y Río de los Sauces." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#5ECAC7" />
+  <meta name="language" content="es-AR" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:title" content="PsicoSalud Berrotarán: Acompañamiento integral" />
+  <meta property="og:description" content="Intervenciones basadas en evidencia. Turnos por WhatsApp. Autoevaluación orientativa. Berrotarán y zona: Elena, Alcira Gigena, Los Cóndores, Almafuerte y Río de los Sauces." />
+  <meta property="og:url" content="https://www.ejemplo.com/" />
+  <meta property="og:image" content="/assets/og-cover.jpg" /> <!-- 1200x630 ideal -->
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PsicoSalud Berrotarán: Acompañamiento integral" />
+  <meta name="twitter:description" content="Atención interdisciplinaria en Berrotarán (Córdoba) y localidades cercanas. Turnos por WhatsApp. Autoevaluación online." />
+  <meta name="twitter:image" content="/assets/og-cover.jpg" />
+
+  <!-- Hinting (optional, helps tiny bit with external links) -->
+  <link rel="dns-prefetch" href="//wa.me">
+  <link rel="dns-prefetch" href="//www.instagram.com">
+
+  <!-- Structured Data: Organization / Local Service Area -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "PsicoSalud Berrotarán",
+    "url": "https://www.ejemplo.com/",
+    "logo": "https://www.ejemplo.com/assets/logo-solo.jpg",
+    "image": "https://www.ejemplo.com/assets/og-cover.jpg",
+    "description": "Equipo interdisciplinario: Psicología, Psicopedagogía, Fonoaudiología, Psicomotricidad y Nutrición. Turnos por WhatsApp. Autoevaluación orientativa.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Berrotarán",
+      "addressRegion": "Córdoba",
+      "addressCountry": "AR"
+    },
+    "sameAs": [
+      "https://www.instagram.com/psicosaludberrotaran"
+    ],
+    "areaServed": [
+      { "@type": "City", "name": "Berrotarán" },
+      { "@type": "City", "name": "Elena" },
+      { "@type": "City", "name": "Alcira Gigena" },
+      { "@type": "City", "name": "Los Cóndores" },
+      { "@type": "City", "name": "Almafuerte" },
+      { "@type": "City", "name": "Río de los Sauces" }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: Website -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "PsicoSalud Berrotarán",
+    "url": "https://www.ejemplo.com/",
+    "inLanguage": "es-AR",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.ejemplo.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -115,7 +191,7 @@
   </li>
   <li>
     <a href="https://instagram.com/psicosalud.berrotaran" target="_blank" rel="noopener"
-       class="rounded-full border border-[#5ECAC7]/40 px-3 py-1.5 text-[#2f2f2f] hover:text-[#184B47] hover:bg-[#A8E6CF]/30 transition">
+       class="rounded-full border border-[#2F8E8A]/40 px-3 py-1.5 text-[#2f2f2f] hover:text-[#184B47] hover:bg-[#A8E6CF]/30 transition">
       Instagram
     </a>
   </li>
@@ -181,7 +257,7 @@
     <!-- Cards-->
     <div class="mt-12 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 text-left">
 
-      <a href="#psicologia"
+      <a href="#areas"
          class="group block rounded-2xl p-4 sm:p-5 text-white shadow hover:shadow-md transition
                 focus:outline-none focus:ring-4 focus:ring-white/50 min-h-[96px]"
          style="background:#3BAAA7">
@@ -196,7 +272,7 @@
         </div>
       </a>
 
-      <a href="#psicopedagogia"
+      <a href="#areas"
          class="group block rounded-2xl p-4 sm:p-5 text-white shadow hover:shadow-md transition
                 focus:outline-none focus:ring-4 focus:ring-white/50 min-h-[96px]"
          style="background:#2B9ED8">
@@ -211,7 +287,7 @@
         </div>
       </a>
 
-      <a href="#fonoaudiologia"
+      <a href="#areas"
          class="group block rounded-2xl p-4 sm:p-5 text-white shadow hover:shadow-md transition
                 focus:outline-none focus:ring-4 focus:ring-white/50 min-h-[96px]"
          style="background:#EF6EA8">
@@ -226,7 +302,7 @@
         </div>
       </a>
 
-      <a href="#psicomotricidad"
+      <a href="#areas"
          class="group block rounded-2xl p-4 sm:p-5 text-[#2a2a2a] shadow hover:shadow-md transition
                 focus:outline-none focus:ring-4 focus:ring-white/50 min-h-[96px]"
          style="background:#F9C846">
@@ -241,7 +317,7 @@
         </div>
       </a>
 
-      <a href="#servicios"
+      <a href="#areas"
          class="group block rounded-2xl p-4 sm:p-5 text-[#2a2a2a] bg-white border border-[#3BAAA7]/30 shadow hover:shadow-md transition
                 focus:outline-none focus:ring-4 focus:ring-[#3BAAA7]/30 min-h-[96px]">
         <div class="flex items-start justify-between gap-3">
@@ -356,7 +432,7 @@
     <p class="mt-2 text-slate-600">Intervenciones basadas en evidencia, coordinadas por un equipo humano y cercano.</p>
 
     <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] transition-shadow">
+      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_28px_rgba(94,202,199,0.25)] transition-shadow">
         <div class="flex items-center">
           <h3 class="text-base md:text-lg font-semibold text-slate-800">Psicología</h3>
         </div>
@@ -376,7 +452,7 @@
         </ul>
       </article>
 
-      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] transition-shadow">
+      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_28px_rgba(94,202,199,0.25)] transition-shadow">
         <div class="flex items-center">
           <h3 class="text-base md:text-lg font-semibold text-slate-800">Psicopedagogía</h3>
         </div>
@@ -396,7 +472,7 @@
         </ul>
       </article>
 
-      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] transition-shadow">
+      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_28px_rgba(94,202,199,0.25)] transition-shadow">
         <div class="flex items-center">
           <h3 class="text-base md:text-lg font-semibold text-slate-800">Fonoaudiología</h3>
         </div>
@@ -416,7 +492,7 @@
         </ul>
       </article>
 
-      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] transition-shadow">
+      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_28px_rgba(94,202,199,0.25)] transition-shadow">
         <div class="flex items-center">
           <h3 class="text-base md:text-lg font-semibold text-slate-800">Psicomotricidad</h3>
         </div>
@@ -436,7 +512,7 @@
         </ul>
       </article>
 
-      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] transition-shadow">
+      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_28px_rgba(94,202,199,0.25)] transition-shadow">
         <div class="flex items-center">
           <h3 class="text-base md:text-lg font-semibold text-slate-800">Nutrición</h3>
         </div>
@@ -456,7 +532,7 @@
         </ul>
       </article>
 
-      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] transition-shadow">
+      <article class="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_28px_rgba(94,202,199,0.25)] transition-shadow">
         <div class="flex items-center">
           <h3 class="text-base md:text-lg font-semibold text-slate-800">Apoyo Escolar</h3>
         </div>
@@ -479,7 +555,14 @@
     </section>
 
 <!-- NUESTRO EQUIPO  -->
-<section id="equipo" class="relative pt-10 md:pt-12 pb-20 md:pb-24 bg-white">
+<section id="equipo" class="relative pt-10 md:pt-12 pb-20 md:pb-24 bg-white
+  [&_.grid>div]:bg-white
+  [&_.grid>div]:rounded-2xl
+  [&_.grid>div]:border
+  [&_.grid>div]:border-slate-100
+  [&_.grid>div]:shadow-[0_4px_16px_rgba(0,0,0,0.08)]
+  [&_.grid>div:hover]:shadow-[0_8px_28px_rgba(94,202,199,0.25)]
+  [&_.grid>div]:transition-shadow">
   <!-- Divider overlaid -->
   <div aria-hidden="true" class="pointer-events-none absolute -top-6 left-0 right-0">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -510,7 +593,7 @@
       <div class="bg-white rounded-2xl p-6 shadow-soft h-full">
         <div class="relative w-fit mx-auto -mt-10 mb-4">
           <div class="absolute inset-0 rounded-full border-[2px] border-[#5ECAC7] scale-[1.08]
-                      shadow-[0_0_6px_rgba(94,202,199,0.25)]"></div>
+     shadow-[0_4px_16px_rgba(94,202,199,0.25)] hover:shadow-[0_8px_28px_rgba(94,202,199,0.35)] transition-shadow"></div>
           <img src="/assets/psicologa.png" alt="Lic. Alejandra Bergonzi"
                class="relative w-20 h-20 rounded-full object-cover border-[3px] border-white shadow" />
         </div>
@@ -532,7 +615,7 @@
       <div class="bg-white rounded-2xl p-6 shadow-soft h-full">
         <div class="relative w-fit mx-auto -mt-10 mb-4">
           <div class="absolute inset-0 rounded-full border-[2px] border-[#5ECAC7] scale-[1.08]
-                      shadow-[0_0_6px_rgba(94,202,199,0.25)]"></div>
+     shadow-[0_4px_16px_rgba(94,202,199,0.25)] hover:shadow-[0_8px_28px_rgba(94,202,199,0.35)] transition-shadow"></div>
           <img src="/assets/psicopedagoga.png" alt="Lic. Shirley Cabral"
                class="relative w-20 h-20 rounded-full object-cover border-[3px] border-white shadow" />
         </div>
