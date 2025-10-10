@@ -18,44 +18,40 @@
 </head>
 
 <body class="min-h-screen bg-white text-slate-800 flex flex-col">
-  <!-- NAV -->
-  <header class="sticky top-0 z-50 bg-[var(--ps-turq)] shadow">
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-white shadow-sm">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <nav class="flex items-center justify-between h-14">
+      <nav class="flex items-center justify-between h-16">
+        <!-- Logo -->
         <a href="/" class="flex items-center gap-2">
-          <img src="/assets/logo-solo.jpg" alt="PsicoSalud" class="w-8 h-8 rounded-full border border-white/70 shadow-sm" />
-          <span class="font-semibold text-white">PsicoSalud Berrotarán</span>
+          <img
+            src="/assets/logo-horizontal.jpg"
+            alt="PsicoSalud Berrotarán"
+            class="h-8 w-auto object-contain"
+          />
         </a>
+
+        <!-- Menú -->
         <div class="hidden sm:flex items-center gap-6 text-sm">
-          <a href="/#inicio" class="text-white/90 hover:text-white">Inicio</a>
-          <a href="/#equipo" class="text-white/90 hover:text-white">Equipo</a>
-          <a href="autoevaluacion.html" class="text-white font-semibold underline underline-offset-4">Autoevaluación</a>
+          <a href="/#inicio" class="text-slate-700 hover:text-[var(--ps-turq)] transition">Inicio</a>
+          <a href="/#equipo" class="text-slate-700 hover:text-[var(--ps-turq)] transition">Equipo</a>
+          <a href="/autoevaluacion.html"
+             class="text-[var(--ps-turq)] font-semibold underline underline-offset-4">
+            Autoevaluación
+          </a>
         </div>
       </nav>
     </div>
+
+    <!-- Línea divisoria inferior -->
+    <div class="border-t-2 border-[var(--ps-turq)]/45"></div>
   </header>
 
-  <!-- DIVISOR SUPERIOR -->
-  <div aria-hidden="true" class="pointer-events-none mt-6 mb-8">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="relative flex items-center justify-center">
-        <div class="absolute inset-0 flex items-center">
-          <div class="w-full h-[2px] bg-[var(--ps-turq)]/45"></div>
-        </div>
-        <div class="relative bg-white px-4">
-          <img
-            src="/assets/logo-solo.jpg"
-            alt="PsicoSalud logo"
-            class="w-12 h-12 rounded-full border-2 border-[var(--ps-turq)] p-0.5 bg-white shadow-sm"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- MAIN CONTENT -->
-  <main class="flex-grow mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+ <main class="flex-grow mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-12">
+
     <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <!-- Texto -->
       <div class="lg:col-span-7">
         <p class="text-sm font-semibold tracking-wide text-slate-600/80 mb-2">
           PsicoSalud Berrotarán · Autoevaluación orientativa
@@ -81,6 +77,7 @@
         </div>
       </div>
 
+      <!-- Tarjeta -->
       <div class="lg:col-span-5">
         <div class="max-w-md mx-auto rounded-2xl border border-[var(--ps-turq)]/40 bg-[var(--ps-gray)] p-6 shadow-sm">
           <div class="flex items-center gap-3">
@@ -116,7 +113,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-center">
         <div class="absolute inset-0 flex items-center">
-          <div class="w-full h-[2px] bg-[var(--ps-turq)]/45"></div>
+          <div class="w-full h-[2px] bg-[#5ECAC7]/45"></div>
         </div>
         <div class="relative bg-white px-4">
           <img
