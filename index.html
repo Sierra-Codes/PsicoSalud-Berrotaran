@@ -4,36 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>PsicoSalud Berrotarán: Acompañamiento integral</title>
+  <title>PsicoSalud Berrotarán · Acompañamiento integral</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="/assets/logo-solo.jpg" />
 
-  <!-- Canonical (set your final URL) -->
-  <!-- Replace with your production domain -->
-  <link rel="canonical" href="https://www.ejemplo.com/" />
-
-  <!-- Primary SEO -->
-  <meta name="description" content="Equipo interdisciplinario en Berrotarán (Córdoba). Psicología, Psicopedagogía, Fonoaudiología, Psicomotricidad y Nutrición. Turnos por WhatsApp. Autoevaluación orientativa online. Atención también a pacientes de Elena, Alcira Gigena, Los Cóndores, Almafuerte y Río de los Sauces." />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://psicosaludberrotaran.com" />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#5ECAC7" />
   <meta name="language" content="es-AR" />
+  <link rel="alternate" href="https://psicosaludberrotaran.com" hreflang="es-ar" />
 
-  <!-- Open Graph -->
+  <!-- Primary SEO -->
+  <meta name="description" content="Equipo interdisciplinario en Berrotarán (Córdoba). Psicología, Psicopedagogía, Fonoaudiología, Psicomotricidad y Nutrición. Atención con enfoque de inclusión y accesibilidad para personas con discapacidad y neurodiversidad. Turnos por WhatsApp. Autoevaluación orientativa online. También para Elena, Alcira Gigena, Los Cóndores, Almafuerte y Río de los Sauces." />
+  <meta name="keywords" content="PsicoSalud Berrotarán, inclusión, discapacidad, accesibilidad, neurodiversidad, integración escolar, apoyos escolares, TEA, TDAH, TEL, dislexia, psicología, psicopedagogía, fonoaudiología, psicomotricidad, nutrición, Córdoba" />
+
+  <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_AR" />
-  <meta property="og:title" content="PsicoSalud Berrotarán: Acompañamiento integral" />
-  <meta property="og:description" content="Intervenciones basadas en evidencia. Turnos por WhatsApp. Autoevaluación orientativa. Berrotarán y zona: Elena, Alcira Gigena, Los Cóndores, Almafuerte y Río de los Sauces." />
-  <meta property="og:url" content="https://www.ejemplo.com/" />
-  <meta property="og:image" content="/assets/og-cover.jpg" /> <!-- 1200x630 ideal -->
+  <meta property="og:title" content="PsicoSalud Berrotarán · Acompañamiento integral" />
+  <meta property="og:description" content="Atención interdisciplinaria con enfoque de inclusión y accesibilidad en Berrotarán y zona." />
+  <meta property="og:url" content="https://psicosaludberrotaran.com" />
+  <meta property="og:image" content="https://psicosaludberrotaran.com/assets/og-cover.jpg" />
+  <meta property="og:image:alt" content="PsicoSalud Berrotarán" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="PsicoSalud Berrotarán: Acompañamiento integral" />
-  <meta name="twitter:description" content="Atención interdisciplinaria en Berrotarán (Córdoba) y localidades cercanas. Turnos por WhatsApp. Autoevaluación online." />
-  <meta name="twitter:image" content="/assets/og-cover.jpg" />
+  <meta name="twitter:title" content="PsicoSalud Berrotarán · Acompañamiento integral" />
+  <meta name="twitter:description" content="Equipo interdisciplinario con enfoque de inclusión y accesibilidad en Berrotarán (Córdoba)." />
+  <meta name="twitter:image" content="https://psicosaludberrotaran.com/assets/og-cover.jpg" />
 
-  <!-- Hinting (optional, helps tiny bit with external links) -->
+  <!-- Hinting -->
   <link rel="dns-prefetch" href="//wa.me">
   <link rel="dns-prefetch" href="//www.instagram.com">
 
@@ -43,10 +45,10 @@
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
     "name": "PsicoSalud Berrotarán",
-    "url": "https://www.ejemplo.com/",
-    "logo": "https://www.ejemplo.com/assets/logo-solo.jpg",
-    "image": "https://www.ejemplo.com/assets/og-cover.jpg",
-    "description": "Equipo interdisciplinario: Psicología, Psicopedagogía, Fonoaudiología, Psicomotricidad y Nutrición. Turnos por WhatsApp. Autoevaluación orientativa.",
+    "url": "https://psicosaludberrotaran.com/",
+    "logo": "https://psicosaludberrotaran.com/assets/logo-solo.jpg",
+    "image": "https://psicosaludberrotaran.com/assets/og-cover.jpg",
+    "description": "Equipo interdisciplinario: Psicología, Psicopedagogía, Fonoaudiología, Psicomotricidad y Nutrición. Enfoque de inclusión, accesibilidad y acompañamiento a personas con discapacidad y neurodiversidad. Turnos por WhatsApp. Autoevaluación orientativa.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Berrotarán",
@@ -73,11 +75,11 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "PsicoSalud Berrotarán",
-    "url": "https://www.ejemplo.com/",
+    "url": "https://psicosaludberrotaran.com/",
     "inLanguage": "es-AR",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://www.ejemplo.com/?q={search_term_string}",
+      "target": "https://psicosaludberrotaran.com/?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   }
@@ -85,69 +87,52 @@
 
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          psico: {
-            turquoise: '#5ECAC7',  
-            green: '#8BCB90',
-            blue: '#3F8AD4',
-            pink: '#F48FA8',
-            yellow: '#FFF176',
-            black: '#2B2B2B',
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            psico: {
+              turquoise: '#5ECAC7',
+              green: '#8BCB90',
+              blue: '#3F8AD4',
+              pink: '#F48FA8',
+              yellow: '#FFF176',
+              black: '#2B2B2B',
+            },
           },
-        },
-        backgroundImage: {
-          'psico-turq-green': 'linear-gradient(to right, #5ECAC7, #8BCB90)',
-          'psico-blue-turq':  'linear-gradient(to right, #3F8AD4, #5ECAC7)',
-        },
-        fontFamily: {
-          sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial'],
-        },
-        boxShadow: {
-          soft: '0 8px 28px rgba(0,0,0,0.06)',
+          backgroundImage: {
+            'psico-turq-green': 'linear-gradient(to right, #5ECAC7, #8BCB90)',
+            'psico-blue-turq':  'linear-gradient(to right, #3F8AD4, #5ECAC7)',
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial'],
+          },
+          boxShadow: { soft: '0 8px 28px rgba(0,0,0,0.06)' },
         },
       },
-    },
-  }
-</script>
-
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%2363D1C1%22/><text x=%2250%22 y=%2258%22 text-anchor=%22middle%22 font-size=%2248%22 fill=%22white%22 font-family=%22Arial%22>Ψ</text></svg>">
-  <style>
-    .blob {
-      position:absolute; inset:auto; filter: blur(40px); opacity:.25; pointer-events:none;
     }
-    .nav-link {
-    position: relative;
-    padding: 0.5rem 0.25rem;
-    color: #2f2f2f;
-    transition: all 0.2s;
-  }
-  .nav-link:hover {
-    color: #3BAAA7;
-  }
-  .nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0;
-    height: 2px;
-    background-color: #5ECAC7;
-    transition: width 0.3s;
-  }
-  .nav-link:hover::after {
-    width: 100%;
-  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Optional SVG favicon (kept) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%2363D1C1%22/><text x=%2250%22 y=%2258%22 text-anchor=%22middle%22 font-size=%2248%22 fill=%22white%22 font-family=%22Arial%22>Ψ</text></svg>">
+  
+  <!-- Google site verification (backup to DNS) -->
+  <meta name="google-site-verification" content="0vtTJgJdPy9254Jnbijq7HIqFvfGdgO4JdKKtGV" />
+  
+  <style>
+    .blob { position:absolute; inset:auto; filter: blur(40px); opacity:.25; pointer-events:none; }
+    .nav-link { position: relative; padding: 0.5rem 0.25rem; color: #2f2f2f; transition: all 0.2s; }
+    .nav-link:hover { color: #3BAAA7; }
+    .nav-link::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 2px; background-color: #5ECAC7; transition: width 0.3s; }
+    .nav-link:hover::after { width: 100%; }
   </style>
 </head>
+
 <body class="font-sans text-slate-800 bg-white selection:bg-brand-turquoise/20 selection:text-brand-dark">
 
   <!-- NAVBAR -->
