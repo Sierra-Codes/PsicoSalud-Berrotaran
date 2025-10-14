@@ -47,103 +47,521 @@
     <div class="border-t-2 border-[var(--ps-turq)]/45"></div>
   </header>
 
-  <!-- MAIN CONTENT -->
- <main class="flex-grow mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-12">
+  <!-- AUTOEVALUACIÓN · Intro -->
+<section id="autoevaluacion" class="relative bg-[#FFFDE7]">
+  
 
-    <div class="grid lg:grid-cols-12 gap-10 items-center">
-      <!-- Texto -->
-      <div class="lg:col-span-7">
-        <p class="text-sm font-semibold tracking-wide text-slate-600/80 mb-2">
-          PsicoSalud Berrotarán · Autoevaluación orientativa
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <!-- Card central -->
+    <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.06)] border border-[#EDEDED]">
+      <!-- Encabezado -->
+      <div class="px-6 sm:px-10 pt-8 pb-4">
+        <p class="text-sm font-semibold tracking-wide text-slate-600 mb-1">
+          PsicoSalud Berrotarán · Autoevaluación
         </p>
-        <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight text-[#3BAAA7]">
-          Autoevaluación — <span class="text-slate-800">En construcción</span>
-        </h1>
-        <p class="mt-4 text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl">
-          Estamos preparando un breve cuestionario online que te ayudará a orientar tu consulta
-          de forma clara y sencilla. Muy pronto estará disponible aquí.
+        <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight text-[#3BAAA7]">
+          Autoevaluación orientativa para madres, padres y cuidadores
+        </h2>
+        <p class="mt-4 text-slate-700 leading-relaxed">
+          Te ofrecemos un cuestionario breve para identificar señales cotidianas y orientarte hacia la especialidad indicada.
+          No reemplaza una evaluación profesional; es solo una guía inicial.
+          Se completa en menos de 5 minutos.
         </p>
+      </div>
 
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="/" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold
-                             bg-[var(--ps-turq)] text-white shadow hover:shadow-md hover:opacity-95 transition">
-            ← Volver al inicio
-          </a>
-          <a href="https://www.instagram.com/psicosaludberrotaran" target="_blank"
-             class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold
-                    border border-[var(--ps-turq)] text-[var(--ps-turq)] hover:bg-[var(--ps-turq)]/10 transition">
-            Ver Instagram
-          </a>
+      <!-- Form básico (opcional) -->
+      <div class="px-6 sm:px-10 pb-6">
+        <form id="autoeval-intro-form" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Edad -->
+          <div class="sm:col-span-1">
+            <label for="edad" class="block text-sm font-medium text-slate-700">Edad del niño o niña</label>
+            <input id="edad" name="edad" type="number" min="0" max="18" inputmode="numeric"
+                   class="mt-1 block w-full rounded-xl border border-slate-300 bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#5ECAC7] focus:border-[#5ECAC7]" />
+          </div>
+
+          <!-- Etapa escolar -->
+          <div class="sm:col-span-1">
+            <label for="etapa" class="block text-sm font-medium text-slate-700">Etapa escolar</label>
+            <select id="etapa" name="etapa"
+                    class="mt-1 block w-full rounded-xl border border-slate-300 bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#5ECAC7] focus:border-[#5ECAC7]">
+              <option value="">Seleccioná una opción</option>
+              <option>Sala cuna</option>
+              <option>Jardín · Sala de 3</option>
+              <option>Jardín · Sala de 4</option>
+              <option>Jardín · Sala de 5</option>
+              <option>Primario · 1.º</option>
+              <option>Primario · 2.º</option>
+              <option>Primario · 3.º</option>
+              <option>Primario · 4.º</option>
+              <option>Primario · 5.º</option>
+              <option>Primario · 6.º</option>
+              <option>Secundario · 1.º</option>
+              <option>Secundario · 2.º</option>
+              <option>Secundario · 3.º</option>
+              <option>Secundario · 4.º</option>
+              <option>Secundario · 5.º</option>
+              <option>Secundario · 6.º/7.º</option>
+            </select>
+          </div>
+
+          <!-- Diagnóstico previo -->
+          <fieldset class="sm:col-span-2">
+            <legend class="block text-sm font-medium text-slate-700">¿Tiene diagnóstico previo?</legend>
+            <div class="mt-2 flex items-center gap-6">
+              <label class="inline-flex items-center gap-2 text-sm text-slate-700">
+                <input type="radio" name="diagnostico" value="si"
+                       class="h-4 w-4 text-[#5ECAC7] border-slate-300 focus:ring-[#5ECAC7]">
+                <span>Sí</span>
+              </label>
+              <label class="inline-flex items-center gap-2 text-sm text-slate-700">
+                <input type="radio" name="diagnostico" value="no"
+                       class="h-4 w-4 text-[#5ECAC7] border-slate-300 focus:ring-[#5ECAC7]">
+                <span>No</span>
+              </label>
+            </div>
+          </fieldset>
+        </form>
+
+        <!-- Nota + progreso -->
+        <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <p class="text-xs text-slate-500">
+            * Esta autoevaluación es orientativa. Si tenés dudas, podés contactarnos desde la sección Equipo.
+
+          </p>
+          <!-- Barra de progreso inicial (0%) -->
+          <div class="w-full sm:w-64">
+            <div class="h-2 w-full rounded-full bg-slate-100 overflow-hidden">
+              <div id="autoeval-progress" class="h-2 w-0 bg-[#5ECAC7]"></div>
+            </div>
+            <p class="mt-1 text-[11px] text-right text-slate-500">Progreso 0%</p>
+          </div>
         </div>
       </div>
 
-      <!-- Tarjeta -->
-      <div class="lg:col-span-5">
-        <div class="max-w-md mx-auto rounded-2xl border border-[var(--ps-turq)]/40 bg-[var(--ps-gray)] p-6 shadow-sm">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full grid place-items-center bg-[var(--ps-turq)]/20">
-              <span class="text-2xl">🚧</span>
-            </div>
-            <h2 class="text-lg font-bold text-slate-800">Página en construcción</h2>
-          </div>
-          <p class="mt-3 text-slate-600">
-            Muy pronto podrás responder un breve formulario orientativo para saber con qué profesional iniciar tu consulta.
-          </p>
-          <ul class="mt-4 space-y-1 text-sm text-slate-600">
-            <li>• Preguntas simples y en lenguaje cotidiano.</li>
-            <li>• Sugerencia de orientación profesional.</li>
-            <li>• Enlace directo a WhatsApp.</li>
-          </ul>
-          <div class="mt-5">
-            <a href="/" class="inline-flex items-center rounded-lg px-3 py-2 text-sm font-semibold
-                                bg-slate-800 text-white hover:bg-slate-700 shadow">
-              Entendido
-            </a>
-          </div>
-        </div>
-        <p class="mt-3 text-xs text-slate-500 text-center">
-          *La autoevaluación será orientativa y no reemplaza una consulta profesional.
-        </p>
+      <!-- Acciones -->
+      <div class="px-6 sm:px-10 pt-2 pb-8 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+        <button id="btn-comenzar-autoeval" type="button"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 bg-[#5ECAC7] text-white font-semibold shadow-sm hover:opacity-95 hover:scale-[1.01] transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          Comenzar autoevaluación
+        </button>
+
+       
       </div>
     </div>
-  </main>
+  </div>
+</section>
+<!-- AUTOEVALUACIÓN · Preguntas (una por vez) -->
+<section id="autoeval-preguntas" class="relative bg-[#FFFDE7] hidden">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.06)] border border-[#EDEDED]">
 
-  <!-- DIVISOR INFERIOR -->
-  <div aria-hidden="true" class="pointer-events-none mt-12 mb-4">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="relative flex items-center justify-center">
-        <div class="absolute inset-0 flex items-center">
-          <div class="w-full h-[2px] bg-[#5ECAC7]/45"></div>
+      <!-- Header -->
+      <div class="px-6 sm:px-10 pt-8 pb-3">
+        <p class="text-sm font-semibold tracking-wide text-slate-600 mb-1">
+          PsicoSalud Berrotarán · Autoevaluación
+        </p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight text-[#3BAAA7]">
+          Responda cada pregunta
+        </h2>
+        <p class="mt-3 text-slate-700">
+          Seleccione <strong>Sí</strong> o <strong>No</strong>. Puede volver atrás si necesita revisar una respuesta.
+        </p>
+      </div>
+
+      <!-- Progreso -->
+      <div class="px-6 sm:px-10 pb-2">
+        <div class="flex items-center justify-between">
+          <p id="autoeval-step-label" class="text-sm text-slate-600">Pregunta 1 de 15</p>
+          <p id="autoeval-percent-label" class="text-sm text-slate-600">0%</p>
         </div>
-        <div class="relative bg-white px-4">
-          <img
-            src="/assets/logo-solo.jpg"
-            alt="PsicoSalud logo"
-            class="w-12 h-12 rounded-full border-2 border-[var(--ps-turq)] p-0.5 bg-white shadow-sm"
-          />
+        <div class="mt-2 h-2 w-full rounded-full bg-slate-100 overflow-hidden">
+          <div id="autoeval-progress-inner" class="h-2 w-0 bg-[#5ECAC7] transition-all"></div>
+        </div>
+      </div>
+
+      <!-- Contenido -->
+      <div class="px-6 sm:px-10 py-6">
+        <div id="autoeval-question-card" class="space-y-6">
+          <h3 id="autoeval-question-text" class="text-lg sm:text-xl font-semibold text-slate-800">
+            <!-- texto de pregunta -->
+          </h3>
+
+          <!-- Botones Sí / No -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <button id="btn-si" type="button"
+                    class="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 bg-[#5ECAC7] text-white font-semibold shadow-sm hover:opacity-95 hover:scale-[1.01] transition">
+              Sí
+            </button>
+            <button id="btn-no" type="button"
+                    class="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 border border-[#5ECAC7]/40 text-[#3BAAA7] hover:bg-[#A8E6CF]/30 hover:scale-[1.01] transition">
+              No
+            </button>
+          </div>
+
+          <!-- Navegación -->
+          <div class="mt-4 flex items-center justify-between">
+            <button id="btn-volver" type="button"
+                    class="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 disabled:opacity-40 disabled:pointer-events-none">
+              ← Volver
+            </button>
+
+            <button id="btn-siguiente" type="button"
+                    class="inline-flex items-center gap-2 rounded-xl px-5 py-3 bg-[#5ECAC7] text-white font-semibold shadow-sm hover:opacity-95 hover:scale-[1.01] transition">
+              Siguiente →
+            </button>
+          </div>
+
+          <!-- Nota -->
+          <p class="mt-4 text-xs text-slate-500">
+            * Esta autoevaluación es orientativa y no reemplaza la evaluación profesional.
+          </p>
         </div>
       </div>
     </div>
   </div>
+</section>
+<!-- AUTOEVALUACIÓN · Resultados -->
+<section id="autoeval-resultados" class="relative bg-[#FFFDE7] hidden">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.06)] border border-[#EDEDED]">
 
-  <!-- FOOTER -->
-  <footer class="pb-8">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-slate-500 text-center sm:text-left">
-        © <span id="year"></span> PsicoSalud Berrotarán — Todos los derechos reservados
-      </p>
-      <p class="text-sm text-slate-400">
-        Desarrollado por
-        <a href="https://sierracodes.netlify.app/" target="_blank"
-           class="inline-flex items-center underline hover:opacity-90 transition align-middle">
-          <img src="/assets/sierra-codes.png" alt="Sierra Codes" class="h-10 ml-1 inline-block" />
-        </a>
+      <!-- Header -->
+      <div class="px-6 sm:px-10 pt-8 pb-3 text-center">
+        <p class="text-sm font-semibold tracking-wide text-slate-600 mb-1">
+          PsicoSalud Berrotarán · Resultados
+        </p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight text-[#3BAAA7]">
+          Resultado orientativo
+        </h2>
+      </div>
+
+      <!-- Mensaje -->
+      <div class="px-6 sm:px-10 py-6 text-center">
+       
+<p id="autoeval-resultado-text" aria-live="polite"
+   class="text-base sm:text-lg text-slate-700 leading-relaxed mb-6">
+
+  <!-- mensaje generado por JS -->
+</p>
+
+<p class="text-slate-700 mb-4">
+  Podés comunicarte directamente con la profesional correspondiente en la sección
+  <strong>Equipo</strong> de la página principal.
+</p>
+        <!-- CTA principal (redirige al equipo) -->
+<a id="autoeval-equipo"
+   href="/#equipo"
+   class="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 bg-[#5ECAC7] text-white font-semibold shadow-sm hover:opacity-95 hover:scale-[1.02] transition">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 10l4 4-4 4m4-4H3" />
+  </svg>
+  Comunicate con la profesional correspondiente
+</a>
+
+
+        <!-- Botón secundario -->
+        <div class="mt-6">
+          <button id="autoeval-volver-inicio"
+                  class="text-[#3BAAA7] underline hover:text-[#5ECAC7] transition">
+            ↩ Volver al inicio
+          </button>
+        </div>
+      </div>
+
+      <p class="px-6 sm:px-10 pb-8 text-xs text-slate-500 text-center">
+        * Este resultado es solo orientativo y no reemplaza una evaluación profesional.
       </p>
     </div>
-  </footer>
+  </div>
+</section>
+
+
+
+  <!-- FOOTER -->
+<footer class="bg-white border-t border-[#E4E7EB]">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6
+              flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-slate-600">
+    <!-- Left -->
+    <p class="m-0 text-center sm:text-left">
+      &copy; <span id="year"></span> <strong>PsicoSalud Berrotarán</strong> — Todos los derechos reservados.
+    </p>
+    <!-- Right -->
+    <p class="m-0 text-center sm:text-right">
+      Desarrollado por
+      <a href="https://sierracodes.netlify.app/" target="_blank"
+         class="inline-flex items-center gap-1 text-[#3BAAA7] font-semibold hover:text-[#5ECAC7] transition align-middle">
+        <img src="/assets/sierra-codes.png" alt="Sierra Codes" class="h-10 w-auto inline-block" />
+      
+      </a>
+    </p>
+  </div>
+</footer>
+
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    /* ===========================
+   AUTOEVALUACIÓN · LÓGICA (PREGUNTAS)
+   - Carga preguntas una por vez
+   - Guarda respuestas y conteos por área
+   - Deja resultados en window.autoevalState para la pantalla final
+=========================== */
+
+(function () {
+  // --- dataset de preguntas (texto + área)
+  const preguntas = [
+    // Psicología
+    { t: "¿Tu hijo/a se muestra con cambios frecuentes de humor, irritabilidad o ansiedad ante situaciones cotidianas?", area: "psicologia" },
+    { t: "¿Te preocupa que le cueste expresar lo que siente, hablar de lo que le pasa o se aísle con facilidad?", area: "psicologia" },
+    { t: "¿Tenés la sensación de que le cuesta aceptar límites o frustraciones y reacciona con enojo o tristeza excesiva?", area: "psicologia" },
+
+    // Psicopedagogía
+    { t: "¿Tu hijo/a necesita mucho tiempo o ayuda para hacer tareas escolares que otros niños de su edad realizan solos?", area: "psicopedagogia" },
+    { t: "¿Las docentes te han comentado que tiene dificultades para leer, escribir, comprender textos o realizar cálculos, a pesar del esfuerzo?", area: "psicopedagogia" },
+    { t: "¿Le cuesta mantener la atención o recordar lo que estudia, incluso en temas que le interesan?", area: "psicopedagogia" },
+
+    // Fonoaudiología
+    { t: "¿Tu hijo/a pronuncia mal ciertas palabras o sonidos y eso afecta su claridad al hablar?", area: "fonoaudiologia" },
+    { t: "¿Te parece que comprende consignas o explicaciones con dificultad, o necesita que se las repitan varias veces?", area: "fonoaudiologia" },
+    { t: "¿Su lenguaje parece más limitado o más lento que el de otros niños/as de su edad?", area: "fonoaudiologia" },
+
+    // Psicomotricidad
+    { t: "¿Notás que tiene torpeza o inseguridad al correr, saltar o participar en juegos con movimiento?", area: "psicomotricidad" },
+    { t: "¿Le cuesta realizar tareas que requieren precisión, como recortar, escribir o abrocharse la ropa?", area: "psicomotricidad" },
+    { t: "¿Presenta una postura tensa, rígida o poco relajada, o se cansa fácilmente al hacer actividad física?", area: "psicomotricidad" },
+
+    // Nutrición
+    { t: "¿Tu hijo/a presenta cambios de apetito o hábitos alimentarios que te preocupan?", area: "nutricion" },
+    { t: "¿Te resulta difícil mantener una rutina de comidas saludables o identificar qué alimentos le hacen bien?", area: "nutricion" },
+    { t: "¿Notás que su energía, concentración o estado de ánimo varían según la alimentación o el descanso?", area: "nutricion" },
+  ];
+
+  // --- estado global (quedará disponible para la pantalla de resultados)
+  window.autoevalState = {
+    respuestas: Array(preguntas.length).fill(null), // true = Sí, false = No
+    conteoSi: { psicologia: 0, psicopedagogia: 0, fonoaudiologia: 0, psicomotricidad: 0, nutricion: 0 },
+    index: 0,
+    terminado: false,
+    meta: { total: preguntas.length }
+  };
+
+  // --- elementos
+  const sectionIntro = document.getElementById("autoevaluacion"); // sección de intro
+  const sectionQ = document.getElementById("autoeval-preguntas");
+  const btnStart = document.getElementById("btn-comenzar-autoeval");
+
+  const qText = document.getElementById("autoeval-question-text");
+  const stepLabel = document.getElementById("autoeval-step-label");
+  const percentLabel = document.getElementById("autoeval-percent-label");
+  const progressInner = document.getElementById("autoeval-progress-inner");
+
+  const btnSi = document.getElementById("btn-si");
+  const btnNo = document.getElementById("btn-no");
+  const btnVolver = document.getElementById("btn-volver");
+  const btnSiguiente = document.getElementById("btn-siguiente");
+
+  // --- helpers
+  function render() {
+    const st = window.autoevalState;
+    const i = st.index;
+    const total = st.meta.total;
+
+    qText.textContent = preguntas[i].t;
+    stepLabel.textContent = `Pregunta ${i + 1} de ${total}`;
+
+    const percent = Math.round((i / total) * 100);
+    percentLabel.textContent = `${percent}%`;
+    progressInner.style.width = `${percent}%`;
+
+    // deshabilitar volver en la primera
+    btnVolver.disabled = i === 0;
+
+    // si ya respondió, marcar visual? (opcional)
+  }
+
+  function registrarRespuesta(valorBool) {
+    const st = window.autoevalState;
+    const i = st.index;
+    const previa = st.respuestas[i];
+
+    // actualizar array
+    st.respuestas[i] = valorBool;
+
+    // actualizar conteos si/no (solo si cambia)
+    const area = preguntas[i].area;
+    if (previa === null) {
+      if (valorBool === true) st.conteoSi[area] += 1;
+    } else if (previa !== valorBool) {
+      // cambió de Sí a No o viceversa
+      if (valorBool === true) st.conteoSi[area] += 1;
+      else st.conteoSi[area] -= 1;
+    }
+  }
+
+  function siguiente() {
+    const st = window.autoevalState;
+    if (st.respuestas[st.index] === null) return; // no dejar avanzar sin responder
+
+    if (st.index < st.meta.total - 1) {
+      st.index += 1;
+      render();
+    } else {
+      st.terminado = true;
+      // completar barra al 100%
+      progressInner.style.width = "100%";
+      percentLabel.textContent = "100%";
+
+      // aquí todavía NO mostramos resultados.
+      // Dejamos todo listo y emitimos un evento por si se quiere enganchar algo.
+      const ev = new CustomEvent("autoeval:fin", { detail: window.autoevalState });
+      window.dispatchEvent(ev);
+
+
+    }
+  }
+
+  function volver() {
+    const st = window.autoevalState;
+    if (st.index > 0) {
+      st.index -= 1;
+      render();
+    }
+  }
+
+  // --- eventos
+  if (btnStart) {
+    btnStart.addEventListener("click", () => {
+      // opcional: validar campos intro si fuera requerido (edad, etapa, diagnóstico)
+      sectionIntro.classList.add("hidden");
+      sectionQ.classList.remove("hidden");
+      window.autoevalState.index = 0;
+      render();
+      // foco accesible
+      qText.setAttribute("tabindex", "-1");
+      qText.focus({ preventScroll: true });
+    });
+  }
+
+  btnSi.addEventListener("click", () => {
+    registrarRespuesta(true);
+    siguiente();
+  });
+
+  btnNo.addEventListener("click", () => {
+    registrarRespuesta(false);
+    siguiente();
+  });
+
+  btnSiguiente.addEventListener("click", () => {
+    // permite avanzar si ya respondió explícitamente
+    siguiente();
+  });
+
+  btnVolver.addEventListener("click", () => {
+    volver();
+  });
+
+  // accesibilidad: teclas S/N y flechas
+  window.addEventListener("keydown", (e) => {
+    const visible = !sectionQ.classList.contains("hidden");
+    if (!visible) return;
+    if (e.key.toLowerCase() === "s") { registrarRespuesta(true); siguiente(); }
+    if (e.key.toLowerCase() === "n") { registrarRespuesta(false); siguiente(); }
+    if (e.key === "ArrowLeft") { volver(); }
+    if (e.key === "ArrowRight") { siguiente(); }
+  });
+})();
+/* ===========================
+   AUTOEVALUACIÓN · RESULTADOS (con sugerencia en caso interdisciplinario)
+=========================== */
+(function () {
+  const sectionPreg = document.getElementById("autoeval-preguntas");
+  const sectionRes  = document.getElementById("autoeval-resultados");
+  const txt         = document.getElementById("autoeval-resultado-text");
+  const btnVolverInicio = document.getElementById("autoeval-volver-inicio");
+
+  // helper para etiquetas legibles
+  function areaLabel(a) {
+    return {
+      psicologia: "Psicología",
+      psicopedagogia: "Psicopedagogía",
+      fonoaudiologia: "Fonoaudiología",
+      psicomotricidad: "Psicomotricidad",
+      nutricion: "Nutrición",
+    }[a] || a;
+  }
+
+  // mensajes base
+  const mensajes = {
+    psicologia:
+      "Tus respuestas sugieren que podría ser útil una consulta inicial en el área de <strong>Psicología</strong>, para acompañar aspectos emocionales o de conducta.",
+    psicopedagogia:
+      "Las respuestas indican que podría ser útil consultar con <strong>Psicopedagogía</strong>, para evaluar procesos de aprendizaje, atención y estrategias escolares.",
+    fonoaudiologia:
+      "Puede ser útil una consulta en <strong>Fonoaudiología</strong>, para observar aspectos del lenguaje, pronunciación y comprensión.",
+    psicomotricidad:
+      "Las respuestas señalan que podría ser valioso un acompañamiento desde <strong>Psicomotricidad</strong>, para fortalecer la coordinación, el equilibrio y la motricidad fina.",
+    nutricion:
+      "Sería conveniente una consulta con <strong>Nutrición</strong>, para revisar hábitos alimentarios, energía y bienestar general.",
+    ninguno:
+      "No se observan señales de alerta inmediatas. Podés repetir la autoevaluación más adelante si aparecen nuevos cambios.",
+  };
+
+  // escucha el final del cuestionario
+  window.addEventListener("autoeval:fin", (e) => {
+    const st = e.detail;
+    const conteos = st.conteoSi;
+    const totalSi = Object.values(conteos).reduce((a, b) => a + b, 0);
+
+    let areaFinal = "ninguno";
+    let sugerida  = null; // sugerencia en caso interdisciplinario
+
+    if (totalSi > 0) {
+      const max = Math.max(...Object.values(conteos));
+      const ganadoras = Object.entries(conteos)
+        .filter(([_, v]) => v === max)
+        .map(([k]) => k);
+
+      if (ganadoras.length === 1) {
+        areaFinal = ganadoras[0]; // caso clásico: una sola área con mayor puntaje
+      } else {
+        areaFinal = "mixto";      // caso interdisciplinario
+        // elegir una al azar entre las áreas con mayor puntaje como primera consulta sugerida
+        sugerida = ganadoras[Math.floor(Math.random() * ganadoras.length)];
+      }
+    }
+
+    // construir mensaje final
+    let htmlMensaje = "";
+    if (areaFinal === "mixto") {
+      const etiquetaSugerida = areaLabel(sugerida);
+      htmlMensaje =
+        `Tus respuestas muestran señales en distintas áreas. ` +
+        `Se recomienda un abordaje <strong>interdisciplinario</strong>. ` +
+        `Como primer paso, podrías comunicarte con <strong>${etiquetaSugerida}</strong> ` +
+        `para orientar la derivación y coordinación del equipo.`;
+    } else if (areaFinal === "ninguno") {
+      htmlMensaje = mensajes.ninguno;
+    } else {
+      htmlMensaje = mensajes[areaFinal] || "";
+    }
+
+    txt.innerHTML = htmlMensaje;
+    sectionPreg.classList.add("hidden");
+    sectionRes.classList.remove("hidden");
+    window.scrollTo({ top: sectionRes.offsetTop - 50, behavior: "smooth" });
+  });
+
+  // volver al inicio
+  btnVolverInicio.addEventListener("click", () => {
+    sectionRes.classList.add("hidden");
+    document.getElementById("autoevaluacion").classList.remove("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+})();
+
+
+</script>
 </body>
 </html>
